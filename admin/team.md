@@ -15,4 +15,4 @@ Hello! Welcome to our team page :) We are [team name], and we value open and res
 - Shang Liu, Developer -- GitHub
 - Kenzo Ku, Designer -- [GitHub](https://github.com/kenzoputraku)
 - Molly Maclaren, Developer -- [GitHub](https://github.com/mojeanmac)
-- Wenyu Zhong, Developer -- GitHub
+- Wenyu Zhong, Developer -- [GitHub](https://github.com/Eunggseo)
