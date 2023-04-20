@@ -1,11 +1,12 @@
-# Team [Name] - Group 13
+# Team Black Cat Crew - Group 13
 
-Hello! Welcome to our team page :) We are [team name], and we value open and respectful communication among team members. 
+Hello! Welcome to our team page :) We are the Black Cat Crew, and we value open and respectful communication among team members. 
 
 ![A black cat, which serves as our team logo.](/admin/branding/cat.png)
 
 ## Team Members
 - Aryan Desai, Leader -- [GitHub](https://github.com/aryand10)
+  - Hi, I’m Aryan Desai and I’m a second year student majoring in Computer Engineering! I’m new to Software Engineering as I’ve only really worked individually with back-end development in the past but I’m excited to get some experience with SWE this quarter. In my free time I’m an avid fan of motorsports and videography!
 - Adam Bauer, Leader -- [GitHub](https://github.com/asbauer1)
 - Adhithi Ganesan, Planner -- [GitHub](https://github.com/adhithiganesan)
 - Emily Jin, Developer -- [GitHub](https://github.com/emjinn)
@@ -16,3 +17,4 @@ Hello! Welcome to our team page :) We are [team name], and we value open and res
 - Kenzo Ku, Designer -- [GitHub](https://github.com/kenzoputraku)
 - Molly Maclaren, Developer -- [GitHub](https://github.com/mojeanmac)
 - Wenyu Zhong, Developer -- [GitHub](https://github.com/Eunggseo)
+  - Hey there, I’m Wenyu Zhong, a forth-year student majoring in Math-CS. While I’m more familiar with back-end development, I’m eager to learn the ropes of front-end too. 
