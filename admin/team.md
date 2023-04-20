@@ -7,7 +7,7 @@ Hello! Welcome to our team page :) We are [team name], and we value open and res
 ## Team Members
 - Aryan Desai, Leader -- [GitHub](https://github.com/aryand10)
 - Adam Bauer, Leader -- [GitHub](https://github.com/asbauer1)
-- Adhithi Ganesan, Planner -- GitHub
+- Adhithi Ganesan, Planner -- [GitHub](https://github.com/adhithiganesan)
 - Emily Jin, Developer -- [GitHub](https://github.com/emjinn)
 - Catherine Du, Developer -- [GitHub](https://github.com/c5du)
 - Andrew Tan, Developer -- [GitHub](https://github.com/andrewt319)
