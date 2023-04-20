@@ -10,7 +10,9 @@ Hello! Welcome to our team page :) We are the Black Cat Crew, and we value open 
 - Adam Bauer, Leader -- [GitHub](https://github.com/asbauer1)
 - Adhithi Ganesan, Planner -- [GitHub](https://github.com/adhithiganesan)
 - Emily Jin, Developer -- [GitHub](https://github.com/emjinn)
+  - Hello! My name is Emily and I'm a third-year computer science student, interested in pursuing product management :) 
 - Catherine Du, Developer -- [GitHub](https://github.com/c5du)
+  - Hello, I am a second year student in Warren studying computer science with a cognitive science minor.
 - Andrew Tan, Developer -- [GitHub](https://github.com/andrewt319)
 - Dongyang Li, Developer -- [GitHub](https://github.com/DongyangLi6816)
 - Shang Liu, Developer -- GitHub
