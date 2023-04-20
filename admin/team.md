@@ -2,6 +2,8 @@
 
 Hello! Welcome to our team page :) We are [team name], and we value open and respectful communication among team members. 
 
+![A black cat, which serves as our team logo.](/admin/branding/cat.png)
+
 ## Team Members
 - Aryan Desai, Leader -- [GitHub](https://github.com/aryand10)
 - Adam Bauer, Leader -- [GitHub](https://github.com/asbauer1)
