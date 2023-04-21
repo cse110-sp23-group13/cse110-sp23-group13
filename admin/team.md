@@ -19,5 +19,6 @@ Hello! Welcome to our team page :) We are the Black Cat Crew, and we value open 
 - Shang Liu, Developer -- GitHub
 - Kenzo Ku, Designer -- [GitHub](https://github.com/kenzoputraku)
 - Molly Maclaren, Developer -- [GitHub](https://github.com/mojeanmac)
+  - Hi, I'm Molly and I'm a second year computer engineering major. Some of my favorite aspects of cs are HCI and cybersecurity.
 - Wenyu Zhong, Developer -- [GitHub](https://github.com/Eunggseo)
   - Hey there, I’m Wenyu Zhong, a forth-year student majoring in Math-CS. While I’m more familiar with back-end development, I’m eager to learn the ropes of front-end too. 
