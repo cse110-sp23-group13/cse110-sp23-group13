@@ -20,6 +20,7 @@ Hello! Welcome to our team page :) We are the Black Cat Crew, and we value open 
 - Dongyang Li, Developer -- [GitHub](https://github.com/DongyangLi6816)
   - Hi, my name is Dongyang Li. I am a third year Math-CS student. I love playing valorant and other video games.
 - Kenzo Ku, Designer -- [GitHub](https://github.com/kenzoputraku)
+  - Hi, I’m Kenzo Ku, a second-year Computer Science major from Indonesia.
 - Molly Maclaren, Developer -- [GitHub](https://github.com/mojeanmac)
   - Hi, I'm Molly and I'm a second year computer engineering major. Some of my favorite aspects of cs are HCI and cybersecurity.
 - Wenyu Zhong, Developer -- [GitHub](https://github.com/Eunggseo)
