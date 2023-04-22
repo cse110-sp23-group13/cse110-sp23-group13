@@ -16,6 +16,7 @@ Hello! Welcome to our team page :) We are the Black Cat Crew, and we value open 
 - Catherine Du, Developer -- [GitHub](https://github.com/c5du)
   - Hello, I am a second year student in Warren studying computer science with a cognitive science minor.
 - Andrew Tan, Developer -- [GitHub](https://github.com/andrewt319)
+  - Hello, my name’s Andrew Tan, and I’m a third year student majoring in Mathematics-Computer Science and minoring in Data Science. I’m super excited to learn more about the SWE process! Some of my hobbies outside of CS include surfing, gymming, and learning how to play chess! 
 - Dongyang Li, Developer -- [GitHub](https://github.com/DongyangLi6816)
   - Hi, my name is Dongyang Li. I am a third year Math-CS student. I love playing valorant and other video games.
 - Kenzo Ku, Designer -- [GitHub](https://github.com/kenzoputraku)
