@@ -1,3 +1,6 @@
+Note: Please name the title of the meeting in the following format: mmddyyyy-meetingTopic.md 
+where meeting topic is what will be covered in this meeting.
+
 # Meeting Title
 ## Date: (Insert date here), 2023
 ___
@@ -20,7 +23,7 @@ ___
 4)
 5)
 ____
-### Agenda Task 1
+### Agenda Task 1 (change name of Task)
 ____
 
 ____
