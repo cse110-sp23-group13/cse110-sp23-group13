@@ -32,7 +32,6 @@ ____
 - User could pick 2 cards out of 10 and different combinations could have different messages.
 - Decided to go with tarot cards
 - Miro Link: https://miro.com/app/board/uXjVMNLeTwk=/
-- Start with yes/no 
 ____
 
 ____
@@ -55,8 +54,10 @@ ___
 
 ____
 ### Tasks Left To-Do
+- Finish Miru Diagram
+- Meet Tuesday after class to work on pitch for TA
 ____
 
 
 ---
-Meeting finished at approximately (insert time here). 
+Meeting finished at approximately 6:17pm. 
