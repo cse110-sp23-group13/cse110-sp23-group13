@@ -1,0 +1,51 @@
+body{
+    background-image: url("../images/backgroundImage.jpeg");
+    background-size: cover;
+    
+}
+
+.h1 {
+    margin: auto;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+    /* position: absolute; */
+    /* top: 50%; */
+}
+
+.website-title {
+    background-color: white;
+    opacity: 50%;
+    margin: auto;
+    text-align: center;
+    font-family:'Courier New', Courier, monospace;
+    padding: 1%;
+}
+
+.website-footer {
+    background-color: white;
+    opacity: 50%;
+    margin: auto;
+    text-align: center;
+    font-family:'Courier New', Courier, monospace;
+    padding: 1%;
+}
+
+.options {
+    background-color: white;
+    opacity: 50%;
+    text-align: center;
+    font-family:'Courier New', Courier, monospace;
+    padding: 1%;
+    width: 50vh;
+    margin: auto;
+}
+
+#landing-logo {
+    height: 50vh;
+    margin: auto;
+    display: block;
+}
