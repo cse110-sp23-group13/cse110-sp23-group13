@@ -50,22 +50,30 @@ body{
     display: block;
 }
 
+#card-page h1, #card-page h2{
+    text-align: center;
+    color: #F1E2C3;
+    margin-top: 100px;
+}
+
 #deck{
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
+    margin-top: 100px;
 }
 
-#deck > img {
+#deck img {
     max-width: 200px;
     position: relative;
     margin-left: -50px;
     border-radius: 10px;
 }
-#deck > #c0 {
+#deck #c0 {
     margin-left: 0px;
 }
 
-#deck > img:hover {
-    box-shadow: 0px 0px 10px 0px white;
+#deck img:hover {
+    box-shadow: 0px 0px 10px 0px #F1E2C3;
+    top: -10px;
 }
