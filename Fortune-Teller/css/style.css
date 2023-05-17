@@ -1,11 +1,12 @@
 body{
     background-image: url("../images/backgroundImage.jpeg");
     background-size: cover;
-    
 }
 
-.h1 {
-    margin: auto;
+#index-page, #feedback-page, #option-page, #card-page h1{
+    text-align: center;
+    color: #F1E2C3;
+    margin-top: 100px;
 }
 
 .container {
@@ -16,29 +17,18 @@ body{
     /* top: 50%; */
 }
 
-.website-title {
-    background-color: white;
-    opacity: 50%;
-    margin: auto;
-    text-align: center;
-    font-family:'Courier New', Courier, monospace;
-    padding: 1%;
-}
-
-.website-footer {
-    background-color: white;
-    opacity: 50%;
-    margin: auto;
-    text-align: center;
-    font-family:'Courier New', Courier, monospace;
-    padding: 1%;
+#form-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
 .options {
     background-color: white;
-    opacity: 50%;
+    /* opacity: 50%; */
     text-align: center;
-    font-family:'Courier New', Courier, monospace;
+    /* font-family:'Courier New', Courier, monospace; */
     padding: 1%;
     width: 50vh;
     margin: auto;
@@ -69,7 +59,7 @@ body{
     display: block;
 }
 
-#card-page h1, #card-page h2{
+#card-page h2{
     text-align: center;
     color: #F1E2C3;
     margin-top: 100px;

@@ -1,25 +1,44 @@
 <!DOCTYPE html>
-<head>
-    <title>Fortune Telling</title>
-    <link rel="stylesheet" href="css/style.css">
-</head>
-<body>
-    <div class="container">
-        <div class="website-title">
-            <h1>Fortune Telling Website</h1>
-        </div>
-        <br>
-        <div class="options">
-            <h1>Tarot Card</h1>
-        </div>
-        <br>
-        <div class="options">
-            <h1>Zodiac Reading</h1>
-        </div>
-        <br>
-        <div class="options">
-            <h1>Feedback</h1>
-        </div>
-    </div>
-</body>
+<html>
+    <head>
+        <title>Fortune Telling - Options</title>
+        <link rel="stylesheet" href="css/style.css">
+        <style>
+            body {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                height: 100vh;
+            }
 
+            .button-container {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .button {
+                padding: 20px 40px;
+                font-size: 24px;
+                margin-bottom: 20px;
+                width: 300px;
+            }
+        </style>
+    </head>
+    <body>
+        <div id="option-page">
+            <h1>Select your fortune telling method</h1>
+            <div class="button-container">
+                <a href="cards.html">
+                    <button class="button">Tarot Cards</button>
+                </a>
+                <a href="zodiac.html">
+                    <button class="button">Zodiac Readings</button>
+                </a>
+                <a href="feedback.html">
+                    <button class="button">Suggestions</button>
+                </a>
+            </div>
+        </div>
+    </body>
+</html>
