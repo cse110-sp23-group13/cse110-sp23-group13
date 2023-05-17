@@ -44,6 +44,25 @@ body{
     margin: auto;
 }
 
+.yes-no-button {
+  position: absolute;
+  left: 537px;
+  top: 235px;
+  width: 437px;
+  height: 103px;
+  font-family: Inter;
+  font-style: normal;
+  font-size: 64px;
+  line-height: 77px;
+  text-align: center;
+  vertical-align: top;
+  color: #000000;
+  background-color: transparent;
+  border: 2px solid #000000;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
 #landing-logo {
     height: 50vh;
     margin: auto;
