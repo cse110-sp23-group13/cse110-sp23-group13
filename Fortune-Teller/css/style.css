@@ -86,3 +86,15 @@ body{
     box-shadow: 0px 0px 10px 0px #F1E2C3;
     top: -10px;
 }
+
+/* box around tarot card reading */
+#reading {
+    justify-content: center;
+    margin-left: 60vw;
+    margin-right: 10vw;
+    background: rgba(241, 226, 195, 0.7);
+}
+/* tarot card reading text */
+#reading h2{
+    color: black;
+}
