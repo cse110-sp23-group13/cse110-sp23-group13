@@ -30,7 +30,11 @@ function init(){
     submitButton.addEventListener('click', function(event) {
         event.preventDefault(); 
         var input = document.getElementById('question').value; 
+        if (input.trim() === '') {
+            return;
+        }
         questionText.textContent = input; // Update h1 tag's content
+        //questionAsked.textContent = input;
         questionForm.style.display = 'none'; 
         updateButton.style.display = 'inline-block'; 
     });
@@ -41,6 +45,7 @@ function init(){
         updateButton.style.display = 'none'; 
         document.getElementById('question').value = ''; 
         questionText.textContent = 'What question do you want answered?'; // Reset the h1 tag's content
+        //document.getElementById('question').textContent = questionAsked;
     });
 
 }
