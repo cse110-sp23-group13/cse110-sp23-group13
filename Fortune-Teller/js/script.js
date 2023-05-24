@@ -1,7 +1,9 @@
 import { yesCards, noCards } from '../text/yesNoDescriptions.js';
 import { cardPaths } from '../text/cardPaths.js'
 
-document.addEventListener('DOMContentLoaded', function() {
+window.addEventListener('DOMContentLoaded', init);
+
+function init(){
     var selectedCard = null;
     var bottomCardContainer = null;
     var isCardSelected = false; // Flag to track card selection
@@ -103,4 +105,30 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         }
     });
-});
+    var questionForm = document.getElementById('questionForm');
+    var submitButton = document.getElementById('submitButton');
+    var updateButton = document.getElementById('updateButton');
+    var questionText = document.getElementById('question-text');
+
+    submitButton.addEventListener('click', function(event) {
+        event.preventDefault(); 
+        var input = document.getElementById('question').value; 
+        if (input.trim() === '') {
+            return;
+        }
+        questionText.textContent = input; // Update h1 tag's content
+        //questionAsked.textContent = input;
+        questionForm.style.display = 'none'; 
+        updateButton.style.display = 'inline-block'; 
+    });
+
+    updateButton.addEventListener('click', function(event) {
+        event.preventDefault(); 
+        questionForm.style.display = 'flex'; 
+        updateButton.style.display = 'none'; 
+        document.getElementById('question').value = ''; 
+        questionText.textContent = 'What question do you want answered?'; // Reset the h1 tag's content
+        //document.getElementById('question').textContent = questionAsked;
+    });
+
+}
