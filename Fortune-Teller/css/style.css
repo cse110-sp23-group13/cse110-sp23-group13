@@ -1,6 +1,39 @@
+#question-text{
+    font-family: monospace; 
+    background-color: whitesmoke; 
+    font-size: xx-large;
+    text-align: center;
+}
 body{
     background-image: url("../images/backgroundImage.jpeg");
     background-size: cover;
+}
+#question{
+    resize: none;
+}
+
+#question-box {
+    width: 90%;
+    margin: 0 auto;
+    position: relative;
+}
+
+#submitButton{
+    background-color: white;
+    font-family: monospace;
+    padding: 23px 10px;
+    font-size: 14px;
+    position: absolute;
+    bottom: 0px;
+}
+#updateButton{
+    background-color: white;
+    font-family: monospace;
+    padding: 7px 10px;
+    font-size: 14px;
+    position: absolute;
+    top: 50px;
+    left: 80%
 }
 
 #index-page, #feedback-page, #option-page, #card-page h1{
