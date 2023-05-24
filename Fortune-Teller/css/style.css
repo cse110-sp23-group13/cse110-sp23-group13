@@ -112,3 +112,7 @@ body{
 #reading h2{
     color: black;
 }
+
+#question {
+    border-radius: 5px;
+}
