@@ -79,3 +79,35 @@ body{
 #reading h2{
     color: black;
 }
+
+.overlay {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: white;
+    padding: 20px;
+    text-align: center;
+    border-radius: 10px; /* Rounded edges */
+  }
+
+  .choose_another {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #3366cc;
+    color: #ffffff;
+    font-size: 16px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .choose_another:hover {
+    background-color: #003399;
+  }
+  
+  .choose_another:focus {
+    outline: none;
+  }
+  
