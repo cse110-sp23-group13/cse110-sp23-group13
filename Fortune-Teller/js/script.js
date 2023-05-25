@@ -105,10 +105,7 @@ function init(){
             }
         }
       });
-});
-
-
-    });
+    };
     var questionForm = document.getElementById('questionForm');
     var submitButton = document.getElementById('submitButton');
     var updateButton = document.getElementById('updateButton');
