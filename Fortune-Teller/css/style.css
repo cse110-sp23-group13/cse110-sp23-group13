@@ -1,6 +1,42 @@
+#question-text{
+    font-family: monospace; 
+    background-color: whitesmoke; 
+    font-size: xx-large;
+    text-align: center;
+}
+
 body{
     background-image: url("../images/backgroundImage.jpeg");
     background-size: cover;
+}
+
+#question{
+    resize: none;
+}
+
+#question-box {
+    width: 90%;
+    margin: 0 auto;
+    position: relative;
+}
+
+#submitButton{
+    background-color: white;
+    font-family: monospace;
+    padding: 23px 10px;
+    font-size: 14px;
+    position: absolute;
+    bottom: 0px;
+}
+
+#updateButton{
+    background-color: white;
+    font-family: monospace;
+    padding: 7px 10px;
+    font-size: 14px;
+    position: absolute;
+    top: 50px;
+    left: 80%
 }
 
 #index-page, #feedback-page, #option-page, #card-page h1{
@@ -136,3 +172,30 @@ body{
     font-weight: bold;
     color: #F1E2C3;
 }
+
+.overlay {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: white;
+    padding: 20px;
+    text-align: center;
+    border-radius: 10px; /* Rounded edges */
+  }
+
+  .choose_another {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #3366cc;
+    color: #ffffff;
+    transition: background-color 0.3s ease;
+  }
+  
+  .choose_another:hover {
+    background-color: #003399;
+  }
+  
+  .choose_another:focus {
+    outline: none;
+  }
