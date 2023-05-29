@@ -113,6 +113,10 @@ body{
     color: black;
 }
 
+#question {
+    border-radius: 5px;
+}
+
 /* Zodiac Page */
 #zodiac-page h1 {
     text-align: center;
