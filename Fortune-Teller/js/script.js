@@ -166,6 +166,17 @@ function findZodiacSign() {
     } else {
         zodiacSign = 'Invalid date or month';
     }
+    questionText.textContent = input; // Update h1 tag's content
+    //questionAsked.textContent = input;
+    questionForm.style.display = 'none'; 
+    updateButton.style.display = 'inline-block'; 
+ });
 
-    document.getElementById('result').textContent = zodiacSign;
-}
+updateButton.addEventListener('click', function(event) {
+    event.preventDefault(); 
+    questionForm.style.display = 'flex'; 
+    updateButton.style.display = 'none'; 
+    document.getElementById('question').value = ''; 
+    questionText.textContent = 'What question do you want answered?'; // Reset the h1 tag's content
+        //document.getElementById('question').textContent = questionAsked;
+});
