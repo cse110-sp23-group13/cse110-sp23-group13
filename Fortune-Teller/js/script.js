@@ -34,7 +34,7 @@ function init(){
             // Create the pick another card button
             var button = document.createElement('button');
             button.classList.add('choose_another')
-            button.textContent = 'Pick Another Card';
+            button.textContent = 'Choose a Different Card';
 
             // Create the flexContainer which will have the card and all the text
             var flexContainer = document.createElement('div');
@@ -107,28 +107,34 @@ function init(){
       });
 };
 
-var questionForm = document.getElementById('questionForm');
+var question = document.getElementById('question');
 var submitButton = document.getElementById('submitButton');
-var updateButton = document.getElementById('updateButton');
 var questionText = document.getElementById('question-text');
+var instructions = document.getElementById('instructions');
+var deck = document.getElementById('deck');
+var textEnabled = true
 
 submitButton.addEventListener('click', function(event) {
     event.preventDefault(); 
-    var input = document.getElementById('question').value; 
-    if (input.trim() === '') {
-        return;
+    if (textEnabled){
+        var input = document.getElementById('question').value; 
+        if (input.trim() === '') {
+            return;
+        }
+        questionText.textContent = input; // Update h1 tag's content
+        question.style.display = 'none'; 
+        submitButton.textContent = 'Update Question';
+        instructions.classList.add('fade-in')
+        deck.classList.add('fade-in')
+        instructions.style.visibility = 'visible'
+        deck.style.visibility = 'visible'
+        textEnabled = false;
     }
-    questionText.textContent = input; // Update h1 tag's content
-    //questionAsked.textContent = input;
-    questionForm.style.display = 'none'; 
-    updateButton.style.display = 'inline-block'; 
+    else {
+        question.style.display = 'flex'; 
+        document.getElementById('question').value = ''; 
+        questionText.textContent = 'What question do you want answered?'; // Reset the h1 tag's content
+        submitButton.textContent = 'Submit';
+        textEnabled = true;
+    }
  });
-
-updateButton.addEventListener('click', function(event) {
-    event.preventDefault(); 
-    questionForm.style.display = 'flex'; 
-    updateButton.style.display = 'none'; 
-    document.getElementById('question').value = ''; 
-    questionText.textContent = 'What question do you want answered?'; // Reset the h1 tag's content
-        //document.getElementById('question').textContent = questionAsked;
-});
