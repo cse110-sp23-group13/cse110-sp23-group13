@@ -83,18 +83,17 @@ body{
 #deck{
     display: flex;
     flex-wrap: wrap;
-    justify-content: center;
     margin-top: 100px;
+    margin-left: 10vw;
+    margin-right: 5vw;
+    justify-content: center;
 }
 
 #deck img {
     max-width: 200px;
     position: relative;
-    margin-left: -50px;
+    margin-left: -5vw;
     border-radius: 10px;
-}
-#deck #c0 {
-    margin-left: 0px;
 }
 
 #deck img:hover {
