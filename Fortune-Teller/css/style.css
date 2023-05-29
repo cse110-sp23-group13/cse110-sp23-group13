@@ -4,10 +4,12 @@
     font-size: xx-large;
     text-align: center;
 }
+
 body{
     background-image: url("../images/backgroundImage.jpeg");
     background-size: cover;
 }
+
 #question{
     resize: none;
 }
@@ -26,6 +28,7 @@ body{
     position: absolute;
     bottom: 0px;
 }
+
 #updateButton{
     background-color: white;
     font-family: monospace;
@@ -59,9 +62,7 @@ body{
 
 .options {
     background-color: white;
-    /* opacity: 50%; */
     text-align: center;
-    /* font-family:'Courier New', Courier, monospace; */
     padding: 1%;
     width: 50vh;
     margin: auto;
@@ -82,18 +83,17 @@ body{
 #deck{
     display: flex;
     flex-wrap: wrap;
-    justify-content: center;
     margin-top: 100px;
+    margin-left: 10vw;
+    margin-right: 5vw;
+    justify-content: center;
 }
 
 #deck img {
     max-width: 200px;
     position: relative;
-    margin-left: -50px;
+    margin-left: -5vw;
     border-radius: 10px;
-}
-#deck #c0 {
-    margin-left: 0px;
 }
 
 #deck img:hover {
@@ -116,3 +116,89 @@ body{
 #question {
     border-radius: 5px;
 }
+
+/* Zodiac Page */
+#zodiac-page h1 {
+    text-align: center;
+    color: #F1E2C3;
+}
+
+#zodiac-page .container {
+    max-width: 500px;
+    margin-top: 25vh;
+    /* margin: auto; */
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+#zodiac-page label {
+    text-align: center;
+    display: block;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    color: #F1E2C3;
+}
+
+#zodiac-page input {
+    padding: 10px;
+}
+
+#zodiac-page input[type="text"] {
+    width: 80%;
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    margin: 0 auto;
+    margin-bottom: 5px;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+#zodiac-page button {
+    display: block;
+    width: 80%;
+    padding: 10px;
+    background-color: #F1E2C3;
+    color: #000;
+    font-size: 16px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    margin: auto;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+#zodiac-page #result {
+    margin-top: 20px;
+    text-align: center;
+    font-weight: bold;
+    color: #F1E2C3;
+}
+
+.overlay {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: white;
+    padding: 20px;
+    text-align: center;
+    border-radius: 10px; /* Rounded edges */
+  }
+
+  .choose_another {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #3366cc;
+    color: #ffffff;
+    transition: background-color 0.3s ease;
+  }
+  
+  .choose_another:hover {
+    background-color: #003399;
+  }
+  
+  .choose_another:focus {
+    outline: none;
+  }

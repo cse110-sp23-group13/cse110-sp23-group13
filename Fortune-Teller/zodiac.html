@@ -1,10 +1,23 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <title>Zodiac Reading</title>
-        <link rel="stylesheet" href="css/style.css">
-    </head>
-    <body>
-    
-    </body>
+<head>
+    <title>Zodiac Sign Finder</title>
+    <link rel="stylesheet" href="css/style.css">
+    <script src="js/zodiac.js"></script>
+</head>
+<body>
+    <div id="zodiac-page">
+        <div class="container">
+            <h1>Zodiac Sign Finder</h1>
+            <label for="birth-month">Birth Month:</label>
+            <input type="text" id="birth-month" placeholder="Enter your birth month (e.g., January)">
+            
+            <label for="birth-date">Birth Date:</label>
+            <input type="text" id="birth-date" placeholder="Enter your birth date (e.g., 1)">
+            <br>
+            <button onclick="findZodiacSign()">Find Zodiac Sign</button>
+            <div id="result"></div>
+        </div>
+    </div>
+</body>
 </html>
