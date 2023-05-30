@@ -140,6 +140,8 @@ submitButton.addEventListener('click', function(event) {
         questionText.textContent = 'What question do you want answered?'; // Reset the h1 tag's content
         submitButton.textContent = 'Submit';
         textEnabled = true;
+    }
+})
 
 function findZodiacSign() {
     console.log("This works!");
@@ -175,4 +177,4 @@ function findZodiacSign() {
     } else {
         zodiacSign = 'Invalid date or month';
     }
- });
+ };
