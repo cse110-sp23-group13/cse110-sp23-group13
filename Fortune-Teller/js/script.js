@@ -1,4 +1,4 @@
-import { yesCards, noCards } from '../text/yesNoDescriptions.js';
+import { yesCards, noCards, yesAnswers, noAnswers } from '../text/yesNoDescriptions.js';
 import { cardPaths } from '../text/cardPaths.js'
 
 window.addEventListener('DOMContentLoaded', init);
@@ -20,16 +20,6 @@ function init(){
             // Create the overall container for the card
             var container = document.createElement('div');
             container.classList.add('overlay');
-
-            var title = document.createElement('h2');
-            var randomTitle = Math.random() < 0.5 ? 'Yes' : 'No';
-            title.textContent = randomTitle;
-
-            // Choose if it is a yes or no card, and randomly choose a yes/no text
-            var text = document.createElement('p');
-            const idx = Math.floor(Math.random() * yesCards.length)
-            const cards = Math.floor(Math.random() * 2) == 0 ? yesCards : noCards;
-            text.textContent = cards[idx];
 
             // Create the pick another card button
             var button = document.createElement('button');
@@ -54,6 +44,20 @@ function init(){
             const cardIdx = Math.floor(Math.random() * cardPaths.length);
             image.src = cardPaths[cardIdx];
             selectedCard.src = cardPaths[cardIdx];
+
+            // Choose if it will be a positive or negative reading
+            var title = document.createElement('h1');
+            var randomTitle = Math.random() < 0.5 ? 'Yes' : 'No';
+            title.textContent = randomTitle;
+
+            // Create and fill out description
+            var text = document.createElement('p');
+            if (randomTitle == 'Yes'){
+                text.textContent = yesAnswers[cardIdx]
+            }
+            else {
+                text.textContent = noAnswers[cardIdx]
+            }
 
             // When the button is clicked, it will place the card image on the bototm of the screen, reset the containers, and place the card back in the deck
             button.addEventListener('click', function() {

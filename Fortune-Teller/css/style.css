@@ -104,6 +104,7 @@ body{
 /* end menu styling */
 
 #deck{
+    margin-left: 50px;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
@@ -152,14 +153,14 @@ body{
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    background-color: white;
+    background-color: #F8E8E2;
     padding: 20px;
     text-align: center;
-    font-size: 10pt;
+    font-size: 11pt;
     border-radius: 10px; /* Rounded edges */
     outline: solid;
     outline-offset: -5px;
-    outline-color: #323232;
+    outline-color: #051D41;
     outline-width: 3px;
 }
 
