@@ -1,0 +1,58 @@
+/* Zodiac Page */
+#zodiac-page h1 {
+    text-align: center;
+    color: #F1E2C3;
+}
+
+#zodiac-page .container {
+    max-width: 500px;
+    margin-top: 25vh;
+    /* margin: auto; */
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+#zodiac-page label {
+    text-align: center;
+    display: block;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    color: #F1E2C3;
+}
+
+#zodiac-page input {
+    padding: 10px;
+}
+
+#zodiac-page input[type="text"] {
+    width: 80%;
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    margin: 0 auto;
+    margin-bottom: 5px;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+#zodiac-page button {
+    display: block;
+    width: 80%;
+    padding: 10px;
+    background-color: #F1E2C3;
+    color: #000;
+    font-size: 16px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    margin: auto;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+#zodiac-page #result {
+    margin-top: 20px;
+    text-align: center;
+    font-weight: bold;
+    color: #F1E2C3;
+}

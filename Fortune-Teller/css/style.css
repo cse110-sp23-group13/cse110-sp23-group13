@@ -1,44 +1,71 @@
-#question-text{
-    font-family: monospace; 
-    background-color: whitesmoke; 
-    font-size: xx-large;
-    text-align: center;
+* {
+    font-family: 'Merriweather', serif;
 }
 
 body{
     background-image: url("../images/backgroundImage.jpeg");
-    background-size: cover;
+    background-size: 100% auto;
 }
 
+/* question styling*/
 #question{
-    resize: none;
+    background-color: #f3ECDF;
+    font-size: 20pt;
+    width: 75%;
+    border: none;
+    border-radius: 10px;
+}
+
+#question-text{
+    background-color: #323232;
+    color: #F1E2C3;
+    border-radius: 10px;
+    border-color: #F1E2C3;
+    border: solid;
+    font-size: xx-large;
+    text-align: center;
+    padding: 10px;
+    max-width: 90%;
+    word-wrap:break-word;
 }
 
 #question-box {
-    width: 90%;
     margin: 0 auto;
     position: relative;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
 }
 
-#submitButton{
-    background-color: white;
-    font-family: monospace;
-    padding: 23px 10px;
-    font-size: 14px;
-    position: absolute;
-    bottom: 0px;
+#question-form {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    width: 500px;
 }
 
-#updateButton{
-    background-color: white;
-    font-family: monospace;
-    padding: 7px 10px;
-    font-size: 14px;
-    position: absolute;
-    top: 50px;
-    left: 80%
+#question-box button{
+    background-color: #F1E2C3;
+    color: #323232;
+    border-radius: 10px;
+    outline-offset: -3px;
+    outline-style: solid;
+    outline-color: #323232;
+    border-style: none;
+    padding: 20px 10px;
+    font-size: 14pt;
+    width: 20%;
+    transition: background-color 0.3s ease;
 }
 
+#question-box button:hover {
+    background-color: #9E9583;
+}
+/* end question styling */
+
+/* menu styling */
 #index-page, #feedback-page, #option-page, #card-page h1{
     text-align: center;
     color: #F1E2C3;
@@ -61,7 +88,7 @@ body{
 }
 
 .options {
-    background-color: white;
+    background-color: #F1E2C3;
     text-align: center;
     padding: 1%;
     width: 50vh;
@@ -74,19 +101,15 @@ body{
     display: block;
 }
 
-#card-page h2{
-    text-align: center;
-    color: #F1E2C3;
-    margin-top: 100px;
-}
+/* end menu styling */
 
 #deck{
+    margin-left: 50px;
     display: flex;
     flex-wrap: wrap;
-    margin-top: 100px;
-    margin-left: 10vw;
-    margin-right: 5vw;
     justify-content: center;
+    align-items: center;
+    visibility: hidden;
 }
 
 #deck img {
@@ -101,79 +124,28 @@ body{
     top: -10px;
 }
 
-/* box around tarot card reading */
-#reading {
-    justify-content: center;
-    margin-left: 60vw;
-    margin-right: 10vw;
-    background: rgba(241, 226, 195, 0.7);
-}
-/* tarot card reading text */
-#reading h2{
-    color: black;
-}
-
-#question {
-    border-radius: 5px;
-}
-
-/* Zodiac Page */
-#zodiac-page h1 {
+#instructions {
     text-align: center;
     color: #F1E2C3;
+    font-size: 40px;
+    visibility: hidden;
 }
 
-#zodiac-page .container {
-    max-width: 500px;
-    margin-top: 25vh;
-    /* margin: auto; */
-    padding: 20px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
+.fade-in {
+    opacity: 1;
+	animation-name: fadeInOpacity;
+	animation-iteration-count: 1;
+	animation-timing-function: ease-in;
+	animation-duration: 1s;
 }
 
-#zodiac-page label {
-    text-align: center;
-    display: block;
-    margin-top: 5px;
-    margin-bottom: 5px;
-    color: #F1E2C3;
-}
-
-#zodiac-page input {
-    padding: 10px;
-}
-
-#zodiac-page input[type="text"] {
-    width: 80%;
-    padding: 10px;
-    font-size: 16px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    margin: 0 auto;
-    margin-bottom: 5px;
-    font-family: 'Times New Roman', Times, serif;
-}
-
-#zodiac-page button {
-    display: block;
-    width: 80%;
-    padding: 10px;
-    background-color: #F1E2C3;
-    color: #000;
-    font-size: 16px;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-    margin: auto;
-    font-family: 'Times New Roman', Times, serif;
-}
-
-#zodiac-page #result {
-    margin-top: 20px;
-    text-align: center;
-    font-weight: bold;
-    color: #F1E2C3;
+@keyframes fadeInOpacity {
+	0% {
+		opacity: 0;
+	}
+	100% {
+		opacity: 1;
+	}
 }
 
 .overlay {
@@ -181,24 +153,31 @@ body{
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    background-color: white;
+    background-color: #F8E8E2;
     padding: 20px;
     text-align: center;
+    font-size: 11pt;
     border-radius: 10px; /* Rounded edges */
-  }
+    outline: solid;
+    outline-offset: -5px;
+    outline-color: #051D41;
+    outline-width: 3px;
+}
 
-  .choose_another {
+.choose_another {
     display: inline-block;
     padding: 10px 20px;
-    background-color: #3366cc;
-    color: #ffffff;
+    background-color: #184588;
+    color: #F8E8E2;
     transition: background-color 0.3s ease;
-  }
-  
-  .choose_another:hover {
-    background-color: #003399;
-  }
-  
-  .choose_another:focus {
+    border-radius: 10px;
+    border: none;
+}
+
+.choose_another:hover {
+    background-color: #051D41;
+}
+
+.choose_another:focus {
     outline: none;
-  }
+}

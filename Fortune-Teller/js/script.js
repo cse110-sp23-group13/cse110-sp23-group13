@@ -1,4 +1,4 @@
-import { yesCards, noCards } from '../text/yesNoDescriptions.js';
+import { yesCards, noCards, yesAnswers, noAnswers } from '../text/yesNoDescriptions.js';
 import { cardPaths } from '../text/cardPaths.js'
 
 window.addEventListener('DOMContentLoaded', init);
@@ -21,20 +21,10 @@ function init(){
             var container = document.createElement('div');
             container.classList.add('overlay');
 
-            var title = document.createElement('h2');
-            var randomTitle = Math.random() < 0.5 ? 'Yes' : 'No';
-            title.textContent = randomTitle;
-
-            // Choose if it is a yes or no card, and randomly choose a yes/no text
-            var text = document.createElement('p');
-            const idx = Math.floor(Math.random() * yesCards.length)
-            const cards = Math.floor(Math.random() * 2) == 0 ? yesCards : noCards;
-            text.textContent = cards[idx];
-
             // Create the pick another card button
             var button = document.createElement('button');
             button.classList.add('choose_another')
-            button.textContent = 'Pick Another Card';
+            button.textContent = 'Choose a Different Card';
 
             // Create the flexContainer which will have the card and all the text
             var flexContainer = document.createElement('div');
@@ -54,6 +44,20 @@ function init(){
             const cardIdx = Math.floor(Math.random() * cardPaths.length);
             image.src = cardPaths[cardIdx];
             selectedCard.src = cardPaths[cardIdx];
+
+            // Choose if it will be a positive or negative reading
+            var title = document.createElement('h1');
+            var randomTitle = Math.random() < 0.5 ? 'Yes' : 'No';
+            title.textContent = randomTitle;
+
+            // Create and fill out description
+            var text = document.createElement('p');
+            if (randomTitle == 'Yes'){
+                text.textContent = yesAnswers[cardIdx]
+            }
+            else {
+                text.textContent = noAnswers[cardIdx]
+            }
 
             // When the button is clicked, it will place the card image on the bototm of the screen, reset the containers, and place the card back in the deck
             button.addEventListener('click', function() {
@@ -105,32 +109,37 @@ function init(){
             }
         }
       });
-    };
-    var questionForm = document.getElementById('questionForm');
-    var submitButton = document.getElementById('submitButton');
-    var updateButton = document.getElementById('updateButton');
-    var questionText = document.getElementById('question-text');
+};
 
-    submitButton.addEventListener('click', function(event) {
-        event.preventDefault(); 
+var question = document.getElementById('question');
+var submitButton = document.getElementById('submitButton');
+var questionText = document.getElementById('question-text');
+var instructions = document.getElementById('instructions');
+var deck = document.getElementById('deck');
+var textEnabled = true
+
+submitButton.addEventListener('click', function(event) {
+    event.preventDefault(); 
+    if (textEnabled){
         var input = document.getElementById('question').value; 
         if (input.trim() === '') {
             return;
         }
         questionText.textContent = input; // Update h1 tag's content
-        //questionAsked.textContent = input;
-        questionForm.style.display = 'none'; 
-        updateButton.style.display = 'inline-block'; 
-    });
-
-    updateButton.addEventListener('click', function(event) {
-        event.preventDefault(); 
-        questionForm.style.display = 'flex'; 
-        updateButton.style.display = 'none'; 
+        question.style.display = 'none'; 
+        submitButton.textContent = 'Update Question';
+        instructions.classList.add('fade-in')
+        deck.classList.add('fade-in')
+        instructions.style.visibility = 'visible'
+        deck.style.visibility = 'visible'
+        textEnabled = false;
+    }
+    else {
+        question.style.display = 'flex'; 
         document.getElementById('question').value = ''; 
         questionText.textContent = 'What question do you want answered?'; // Reset the h1 tag's content
-        //document.getElementById('question').textContent = questionAsked;
-    });
+        submitButton.textContent = 'Submit';
+        textEnabled = true;
 
 function findZodiacSign() {
     console.log("This works!");
@@ -166,17 +175,4 @@ function findZodiacSign() {
     } else {
         zodiacSign = 'Invalid date or month';
     }
-    questionText.textContent = input; // Update h1 tag's content
-    //questionAsked.textContent = input;
-    questionForm.style.display = 'none'; 
-    updateButton.style.display = 'inline-block'; 
  });
-
-updateButton.addEventListener('click', function(event) {
-    event.preventDefault(); 
-    questionForm.style.display = 'flex'; 
-    updateButton.style.display = 'none'; 
-    document.getElementById('question').value = ''; 
-    questionText.textContent = 'What question do you want answered?'; // Reset the h1 tag's content
-        //document.getElementById('question').textContent = questionAsked;
-});
