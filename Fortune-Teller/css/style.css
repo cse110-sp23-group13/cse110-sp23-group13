@@ -115,7 +115,7 @@ body{
 #deck img {
     max-width: 200px;
     position: relative;
-    margin-left: -50px;
+    margin-left: -5vw;
     border-radius: 10px;
 }
 
