@@ -2,13 +2,14 @@
 #zodiac-page h1 {
     text-align: center;
     color: #F1E2C3;
+    font-size: 40px;
 }
 
 #zodiac-page .container {
     max-width: 500px;
     margin-top: 25vh;
     /* margin: auto; */
-    padding: 20px;
+    padding: 50px;
     border: 1px solid #ccc;
     border-radius: 5px;
 }
@@ -19,6 +20,7 @@
     margin-top: 5px;
     margin-bottom: 5px;
     color: #F1E2C3;
+    font-size: 18px;
 }
 
 #zodiac-page input {
@@ -28,7 +30,7 @@
 #zodiac-page input[type="text"] {
     width: 80%;
     padding: 10px;
-    font-size: 16px;
+    font-size: 20px;
     border: 1px solid #ccc;
     border-radius: 4px;
     margin: 0 auto;
@@ -55,4 +57,5 @@
     text-align: center;
     font-weight: bold;
     color: #F1E2C3;
+    font-size: 20px;
 }
