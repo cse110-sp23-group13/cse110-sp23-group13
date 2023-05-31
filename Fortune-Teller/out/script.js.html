@@ -1,4 +1,32 @@
-import { yesCards, noCards, yesAnswers, noAnswers } from '../text/yesNoDescriptions.js';
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>JSDoc: Source: script.js</title>
+
+    <script src="scripts/prettify/prettify.js"> </script>
+    <script src="scripts/prettify/lang-css.js"> </script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link type="text/css" rel="stylesheet" href="styles/prettify-tomorrow.css">
+    <link type="text/css" rel="stylesheet" href="styles/jsdoc-default.css">
+</head>
+
+<body>
+
+<div id="main">
+
+    <h1 class="page-title">Source: script.js</h1>
+
+    
+
+
+
+    
+    <section>
+        <article>
+            <pre class="prettyprint source linenums"><code>import { yesCards, noCards, yesAnswers, noAnswers } from '../text/yesNoDescriptions.js';
 import { cardPaths } from '../text/cardPaths.js'
 
 window.addEventListener('DOMContentLoaded', init);
@@ -10,7 +38,7 @@ function init(){
 
     /* Check when card is clicked */
     document.getElementById('deck').addEventListener('click', function(event) {
-        if (!isCardSelected && event.target.classList.contains('card')) {
+        if (!isCardSelected &amp;&amp; event.target.classList.contains('card')) {
             // Hide the card
             event.target.style.visibility = 'hidden';
             selectedCard = new Image(100, 200);
@@ -47,7 +75,7 @@ function init(){
 
             // Choose if it will be a positive or negative reading
             var title = document.createElement('h1');
-            var randomTitle = Math.random() < 0.5 ? 'Yes' : 'No';
+            var randomTitle = Math.random() &lt; 0.5 ? 'Yes' : 'No';
             title.textContent = randomTitle;
 
             // Create and fill out description
@@ -61,7 +89,7 @@ function init(){
 
             // When the button is clicked, it will place the card image on the bototm of the screen, reset the containers, and place the card back in the deck
             button.addEventListener('click', function() {
-                if (selectedCard && bottomCardContainer) {
+                if (selectedCard &amp;&amp; bottomCardContainer) {
                     bottomCardContainer.innerHTML = ''; 
                     bottomCardContainer.appendChild(selectedCard);
                     selectedCard.style.visibility = 'visible';
@@ -153,29 +181,29 @@ function findZodiacSign() {
 
     var zodiacSign = '';
 
-    if ((monthInput === 'december' && dateInput >= 22) || (monthInput === 'january' && dateInput <= 19)) {
+    if ((monthInput === 'december' &amp;&amp; dateInput >= 22) || (monthInput === 'january' &amp;&amp; dateInput &lt;= 19)) {
         zodiacSign = 'Capricorn';
-    } else if ((monthInput === 'january' && dateInput >= 20) || (monthInput === 'february' && dateInput <= 18)) {
+    } else if ((monthInput === 'january' &amp;&amp; dateInput >= 20) || (monthInput === 'february' &amp;&amp; dateInput &lt;= 18)) {
         zodiacSign = 'Aquarius';
-    } else if ((monthInput === 'february' && dateInput >= 19) || (monthInput === 'march' && dateInput <= 20)) {
+    } else if ((monthInput === 'february' &amp;&amp; dateInput >= 19) || (monthInput === 'march' &amp;&amp; dateInput &lt;= 20)) {
         zodiacSign = 'Pisces';
-    } else if ((monthInput === 'march' && dateInput >= 21) || (monthInput === 'april' && dateInput <= 19)) {
+    } else if ((monthInput === 'march' &amp;&amp; dateInput >= 21) || (monthInput === 'april' &amp;&amp; dateInput &lt;= 19)) {
         zodiacSign = 'Aries';
-    } else if ((monthInput === 'april' && dateInput >= 20) || (monthInput === 'may' && dateInput <= 20)) {
+    } else if ((monthInput === 'april' &amp;&amp; dateInput >= 20) || (monthInput === 'may' &amp;&amp; dateInput &lt;= 20)) {
         zodiacSign = 'Taurus';
-    } else if ((monthInput === 'may' && dateInput >= 21) || (monthInput === 'june' && dateInput <= 20)) {
+    } else if ((monthInput === 'may' &amp;&amp; dateInput >= 21) || (monthInput === 'june' &amp;&amp; dateInput &lt;= 20)) {
         zodiacSign = 'Gemini';
-    } else if ((monthInput === 'june' && dateInput >= 21) || (monthInput === 'july' && dateInput <= 22)) {
+    } else if ((monthInput === 'june' &amp;&amp; dateInput >= 21) || (monthInput === 'july' &amp;&amp; dateInput &lt;= 22)) {
         zodiacSign = 'Cancer';
-    } else if ((monthInput === 'july' && dateInput >= 23) || (monthInput === 'august' && dateInput <= 22)) {
+    } else if ((monthInput === 'july' &amp;&amp; dateInput >= 23) || (monthInput === 'august' &amp;&amp; dateInput &lt;= 22)) {
         zodiacSign = 'Leo';
-    } else if ((monthInput === 'august' && dateInput >= 23) || (monthInput === 'september' && dateInput <= 22)) {
+    } else if ((monthInput === 'august' &amp;&amp; dateInput >= 23) || (monthInput === 'september' &amp;&amp; dateInput &lt;= 22)) {
         zodiacSign = 'Virgo';
-    } else if ((monthInput === 'september' && dateInput >= 23) || (monthInput === 'october' && dateInput <= 22)) {
+    } else if ((monthInput === 'september' &amp;&amp; dateInput >= 23) || (monthInput === 'october' &amp;&amp; dateInput &lt;= 22)) {
         zodiacSign = 'Libra';
-    } else if ((monthInput === 'october' && dateInput >= 23) || (monthInput === 'november' && dateInput <= 21)) {
+    } else if ((monthInput === 'october' &amp;&amp; dateInput >= 23) || (monthInput === 'november' &amp;&amp; dateInput &lt;= 21)) {
         zodiacSign = 'Scorpio';
-    } else if ((monthInput === 'november' && dateInput >= 22) || (monthInput === 'december' && dateInput <= 21)) {
+    } else if ((monthInput === 'november' &amp;&amp; dateInput >= 22) || (monthInput === 'december' &amp;&amp; dateInput &lt;= 21)) {
         zodiacSign = 'Sagittarius';
     } else {
         zodiacSign = 'Invalid date or month';
@@ -188,3 +216,26 @@ function findZodiacSign() {
  function hi(){
     return 1;
  }
+</code></pre>
+        </article>
+    </section>
+
+
+
+
+</div>
+
+<nav>
+    <h2><a href="index.html">Home</a></h2><h3>Global</h3><ul><li><a href="global.html#findZodiacSign">findZodiacSign</a></li><li><a href="global.html#hi">hi</a></li></ul>
+</nav>
+
+<br class="clear">
+
+<footer>
+    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 4.0.2</a> on Tue May 30 2023 18:11:25 GMT-0700 (Pacific Daylight Time)
+</footer>
+
+<script> prettyPrint(); </script>
+<script src="scripts/linenumber.js"> </script>
+</body>
+</html>
