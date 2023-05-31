@@ -181,3 +181,9 @@ body{
 .choose_another:focus {
     outline: none;
 }
+
+header img {
+    width: 75px;
+    margin-top: 5px;
+    margin-left: 5px;
+}

@@ -12,19 +12,26 @@
   <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-  <div id="feedback-page">
-    <div class="feedback-title">
-      <h1>Suggestion Box</h1>
+  <header>
+      <a href="index.html">
+          <img src="../admin/branding/cat.png">
+      </a>
+  </header>
+  <main>
+    <div id="feedback-page">
+      <div class="feedback-title">
+        <h1>Suggestion Box</h1>
+      </div>
+      
+      <div id="form-container">
+        <form id="suggestionForm">
+          <!-- <label for="suggestion">Enter your suggestion:</label><br> -->
+          <textarea id="suggestion" name="suggestion" rows="16" cols="75"></textarea><br><br>
+          <input type="submit" value="Submit">
+        </form>
+      </div>
     </div>
-    
-    <div id="form-container">
-      <form id="suggestionForm">
-        <!-- <label for="suggestion">Enter your suggestion:</label><br> -->
-        <textarea id="suggestion" name="suggestion" rows="16" cols="75"></textarea><br><br>
-        <input type="submit" value="Submit">
-      </form>
-    </div>
-  </div>
+  </main>
 
   <script>
     document.getElementById("suggestionForm").addEventListener("submit", function(event) {
