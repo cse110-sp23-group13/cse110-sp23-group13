@@ -141,5 +141,5 @@ submitButton.addEventListener('click', function(event) {
         submitButton.textContent = 'Submit';
         textEnabled = true;
     }
-})
+});
 

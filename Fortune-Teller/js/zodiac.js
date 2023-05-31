@@ -50,7 +50,7 @@ function findZodiacSign() {
       zodiacSignDescription = 'Capricorns are masters of discipline. The wringing of the hands, the constant reminders, the exacting structure, the ever-increasing goals, the tidal wave of self-criticism that lasts forever. They are the ultimate perfectionists. They can be so absorbed in their own internal monologue that it becomes impossible to get them to look away from themselves. Capricorns are often called “workaholics."';
     }
     if(zodiacSign == "Aquarius"){
-      zodiacSignType = "Sign Type: Air \u{1F30A}";
+      zodiacSignType = "Sign Type: Air \u{1F32C}";
       zodiacSignDescription = "Aquarians are archetypal outcasts. This doesn't mean they're loners. In fact, they thrive in large groups—charming you with their peculiar senses of humor, intriguing you with fun facts about the history of disposable straws, or convincing you to join their reading groups. The alienation they feel is often self-imposed—a result of their knee-jerk contrarianism, rather than a lack of social intelligence. They try to be weird. Aquarians hang grapefruit rinds from the wall and call it art, they pretend to actually like noise music, they saturate their internal monologues with SAT words.";
     }
     if(zodiacSign == "Pisces"){
@@ -66,7 +66,7 @@ function findZodiacSign() {
       zodiacSignDescription = "Tauruses are the human equivalent of moss. A handmade wooden chair. They are normally satisfied with the way things are. They embody stability. Sitting in a patch of grass admiring the breeze. When everything else seems to be falling apart, Tauruses are a rock of dependability in an oasis of calm. Practical knowledge and experience is their modus operandi.";
     }
     if(zodiacSign == "Gemini"){
-      zodiacSignType = "Sign Type: Air \u{1F30A}";
+      zodiacSignType = "Sign Type: Air \u{1F32C}";
       zodiacSignDescription = "Geminis are very intelligent and pick up knowledge quickly. They are perceptive, analytical, and often very funny. They have an unreserved, childlike curiosity, always asking new questions.Geminis have an uncanny ability to size up a person's character in a matter of seconds, even if they only just met them. If someone's bluffing, they'll be the first to notice. They are great communicators because they tend to be very responsive and sensitive listeners.";
     }
     if(zodiacSign == "Cancer"){
@@ -79,10 +79,10 @@ function findZodiacSign() {
     }
     if(zodiacSign == "Virgo"){
       zodiacSignType = "Sign Type: Earth \u{1F30D}";
-      zodiacSignDescription = "Virgos are known for being perfectionists. They are known for their attention to detail, which helps them find patterns where there are none. At times, Virgos can be finicky and critical to a fault.It's true that Virgos are very particular, but that doesn't necessarily mean that they keep neat spaces. Their particularities and habits don't necessarily line up with traditional views of cleanliness. They could live in what looks like a Tasmanian devil-style dust storm ruin, but still impose a “no shoes in the house” or “no outside clothes on the bed” rule. Maybe their house looks cluttered, but they still know where everything is. Everything has its place. Virgos prefer to exist in organized spaces, but put helping others over their own comfort. A Virgo can become so busy fixing the lives of those around them that they don't put much work into providing for their own needs. Virgos are rarely motivated by their own self-interest.";
+      zodiacSignDescription = "Virgos are known for being perfectionists. They are known for their attention to detail, which helps them find patterns where there are none. At times, Virgos can be finicky and critical to a fault.It's true that Virgos are very particular, but that doesn't necessarily mean that they keep neat spaces. Their particularities and habits don't necessarily line up with traditional views of cleanliness. They could live in what looks like a Tasmanian devil-style dust storm ruin, but still impose a “no shoes in the house” or “no outside clothes on the bed” rule. Maybe their house looks cluttered, but they still know where everything is. Everything has its place.";
     }
     if(zodiacSign == "Libra"){
-      zodiacSignType = "Sign Type: Air \u{1F30A}";
+      zodiacSignType = "Sign Type: Air \u{1F32C}";
       zodiacSignDescription = "Libras are difficult to really understand because they seem so contradictory. They're simultaneously extroverted and introverted, strategic and spontaneous, focused and intuitive. This variability makes it difficult to pin down their true character. They are an entire constellation of personalities. Libras are different depending on who they're around. This is because they value empathy and want to be receptive. They can be other people's mirrors. While they have strong opinions about other people, it can take a long time for them to understand themselves.";
     }
     if(zodiacSign == "Scorpio"){
@@ -96,10 +96,17 @@ function findZodiacSign() {
   
     // Display the result
     if (zodiacSign) {
-      document.getElementById("result").innerHTML = "Your zodiac is: " + zodiacSign + "<br>" +
-                                                    zodiacSignType + "<br><br>" +
-                                                    zodiacSignDescription + "<br><br>";
-    } else {
+      var resultElement = document.getElementById("result");
+      resultElement.innerHTML = "Your zodiac is: " + zodiacSign + "<br>" +
+                                zodiacSignType + "<br><br>";
+    
+      var descriptionElement = document.createElement("p");
+      descriptionElement.textContent = zodiacSignDescription;
+      resultElement.appendChild(descriptionElement);
+      
+      descriptionElement.style.fontSize = "14px";
+    }
+     else {
       document.getElementById("result").innerHTML = "Unable to determine your zodiac sign.";
     }
 }
