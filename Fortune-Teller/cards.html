@@ -21,28 +21,29 @@
       </form>
     </div>
 
-    <div id = "card-page">
-      <!-- what is index.js?
-      <script src="index.js"></script> -->
-      
-      <!-- to match figma, but can change
-        <header>
-          <h1>Pick a Card</h1>
-      </header>-->
-      <h2 id = instructions >Pick a Card</h2>
-      <div id = "deck">
-          <img src = "./images/cardback.svg" class = "card" id = "c0">
-          <img src = "./images/cardback.svg" class = "card" id = "c1">
-          <img src = "./images/cardback.svg" class = "card" id = "c2">
-          <img src = "./images/cardback.svg" class = "card" id = "c3">
-          <img src = "./images/cardback.svg" class = "card" id = "c4">
-          <img src = "./images/cardback.svg" class = "card" id = "c5">
-          <img src = "./images/cardback.svg" class = "card" id = "c6">
-          <img src = "./images/cardback.svg" class = "card" id = "c7">
-          <!-- ninth card?
-          <img src = "./images/cardback.svg" class = "card" id = "c8"> -->
+    <div id="card-page">
+      <h2 id="instructions">Pick a Card</h2>
+      <div id="deck">
+        <img src="./images/cardback.svg" class="card" id="c0" onclick="playFlipSound()">
+        <img src="./images/cardback.svg" class="card" id="c1" onclick="playFlipSound()">
+        <img src="./images/cardback.svg" class="card" id="c2" onclick="playFlipSound()">
+        <img src="./images/cardback.svg" class="card" id="c3" onclick="playFlipSound()">
+        <img src="./images/cardback.svg" class="card" id="c4" onclick="playFlipSound()">
+        <img src="./images/cardback.svg" class="card" id="c5" onclick="playFlipSound()">
+        <img src="./images/cardback.svg" class="card" id="c6" onclick="playFlipSound()">
+        <img src="./images/cardback.svg" class="card" id="c7" onclick="playFlipSound()">
       </div>
-      
     </div>
+
+    <audio id="flipSound">
+      <source src="./sounds/Card Flip - sound effect [TubeRipper.com].mp3" type="audio/mpeg">
+    </audio>
+
+    <script>
+      function playFlipSound() {
+        var audio = document.getElementById('flipSound');
+        audio.play();
+      }
+    </script>
   </body>
 </html>
