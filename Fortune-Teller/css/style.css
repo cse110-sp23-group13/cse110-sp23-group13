@@ -72,6 +72,10 @@ body{
     margin-top: 100px;
 }
 
+#option-page {
+    margin-top: 25vh;
+}
+
 .container {
     display: flex;
     flex-direction: column;
