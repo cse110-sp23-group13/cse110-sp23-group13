@@ -11,6 +11,15 @@
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Merriweather&display=swap" rel="stylesheet">
         <style>
+            #option-page {
+                margin-top: 10px;
+            }
+            header {
+                display: flex;
+                flex-direction: column;
+                align-items: left;
+                margin-bottom: 10px;
+            }
             body {
                 display: block;
                 justify-content: center;
@@ -30,6 +39,13 @@
                 margin-bottom: 20px;
                 width: 300px;
             }
+            .feedbackButton, .settings {
+                margin-top: 10px; 
+                height: 50px;
+                width: 80px;
+                
+            }
+
         </style>
     </head>
     <body>
@@ -37,6 +53,13 @@
             <a href="index.html">
                 <img src="../admin/branding/cat.png">
             </a>
+            <a href="feedback.html" class="feedbackLink">
+                <button class="feedbackButton">Feedback Form</button>
+            </a>
+            <a href="settings.html" class="siteSettings">
+                <button class="settings">Settings</button>
+            </a>
+
         </header>
         <main>
             <div id="option-page">
@@ -47,9 +70,6 @@
                     </a>
                     <a href="zodiac.html">
                         <button class="button">Zodiac Readings</button>
-                    </a>
-                    <a href="feedback.html">
-                        <button class="button">Suggestions</button>
                     </a>
                 </div>
             </div>
