@@ -1,124 +1,115 @@
-import { yesCards, noCards, yesAnswers, noAnswers } from '../text/yesNoDescriptions.js';
+import { yesAnswers, noAnswers } from '../text/yesNoDescriptions.js';
 import { cardPaths } from '../text/cardPaths.js'
+
 
 window.addEventListener('DOMContentLoaded', init);
 
-function init(){
-    var selectedCard = null;
-    var bottomCardContainer = null;
-    var isCardSelected = false; // Flag to track card selection
 
-    /* Check when card is clicked */
-    document.getElementById('deck').addEventListener('click', function(event) {
-        if (!isCardSelected && event.target.classList.contains('card')) {
-            // Hide the card
-            event.target.style.visibility = 'hidden';
-            selectedCard = new Image(100, 200);
-
-            isCardSelected = true;
-
-            // Create the overall container for the card
-            var container = document.createElement('div');
-            container.classList.add('overlay');
-
-            // Create the pick another card button
-            var button = document.createElement('button');
-            button.classList.add('choose_another')
-            button.textContent = 'Choose a Different Card';
-
-            // Create the flexContainer which will have the card and all the text
-            var flexContainer = document.createElement('div');
-            flexContainer.style.display = 'flex';
-
-            // Create a container for the image and style it 
-            var imageContainer = document.createElement('div');
-            imageContainer.style.padding = '10px';
-            imageContainer.style.height = '500px';
-            imageContainer.style.width = '200px';
-            imageContainer.style.display = 'flex';
-            imageContainer.style.flexDirection = 'column'; // Arrange elements vertically
-            imageContainer.style.justifyContent = 'center';
-
-            // Choose which card it will be randomly
-            var image = new Image(200, 300);
-            const cardIdx = Math.floor(Math.random() * cardPaths.length);
-            image.src = cardPaths[cardIdx];
-            selectedCard.src = cardPaths[cardIdx];
-
-            // Choose if it will be a positive or negative reading
-            var title = document.createElement('h1');
-            var randomTitle = Math.random() < 0.5 ? 'Yes' : 'No';
-            title.textContent = randomTitle;
-
-            // Create and fill out description
-            var text = document.createElement('p');
-            if (randomTitle == 'Yes'){
-                text.textContent = yesAnswers[cardIdx]
-            }
-            else {
-                text.textContent = noAnswers[cardIdx]
-            }
-
-            // When the button is clicked, it will place the card image on the bototm of the screen, reset the containers, and place the card back in the deck
-            button.addEventListener('click', function() {
-                if (selectedCard && bottomCardContainer) {
-                    bottomCardContainer.innerHTML = ''; 
-                    bottomCardContainer.appendChild(selectedCard);
-                    selectedCard.style.visibility = 'visible';
-                }
-                event.target.style.visibility = 'visible';
-                document.body.removeChild(container);
-                isCardSelected = false;
-            });
-            image.style.maxWidth = '100%';
-            imageContainer.appendChild(image);
-
-            // Create a container for the text on the right side
-            var infoContainer = document.createElement('div');
-            infoContainer.style.padding = '10px';
-            infoContainer.style.display = 'flex';
-            infoContainer.style.flexDirection = 'column'; // Arrange elements vertically
-            infoContainer.style.justifyContent = 'center'; // Center elements vertically
-            infoContainer.style.overflow = 'auto'; // Add overflow handling
-            infoContainer.style.height = '500px';
-            infoContainer.style.width = '200px';
-
-            // Append all information
-            container.appendChild(flexContainer);
-            flexContainer.appendChild(imageContainer);
-            flexContainer.appendChild(infoContainer);
-            infoContainer.appendChild(title);
-            infoContainer.appendChild(text);
-            infoContainer.appendChild(button);
-
-            document.body.appendChild(container);
-
-            // Adjust container height
-            container.style.position = 'fixed';
-            container.style.top = '50%';
-            container.style.left = '50%';
-
-            // Create or update the bottom card container
-            if (!bottomCardContainer) {
-                bottomCardContainer = document.createElement('div');
-                bottomCardContainer.style.position = 'fixed';
-                bottomCardContainer.style.bottom = '10px';
-                bottomCardContainer.style.left = '50%';
-                bottomCardContainer.style.transform = 'translateX(-50%)';
-                document.body.appendChild(bottomCardContainer);
-            }
-        }
-      });
-};
-
+var deck = document.getElementById('deck')
+var selectedCard = null;
+var bottomCardContainer = null;
+var container = null;
+var isCardSelected = false; // Flag to track card selection
 var question = document.getElementById('question');
 var submitButton = document.getElementById('submitButton');
 var questionText = document.getElementById('question-text');
 var instructions = document.getElementById('instructions');
-var deck = document.getElementById('deck');
-var textEnabled = true
+var textEnabled = true;
+var currCard = null;
 
-submitButton.addEventListener('click', function(event) {
+function init(){
+    /* Check when card is clicked */
+    deck.addEventListener('click', cardClickEvent);
+    submitButton.addEventListener('click', submitButtonClickEvent)
+};
+
+function cardClickEvent(event) {
+    if (isCardSelected || !event.target.classList.contains('card')) {
+        return;
+    }
+    currCard = event.target;
+    currCard.style.visibility = 'hidden';
+    isCardSelected = true;
+    container = createCardContainer(currCard)
+    document.body.appendChild(container);
+}
+
+function createCardContainer() {
+    var container = document.createElement('div');
+    container.classList.add('overlay');
+
+    var chooseAnotherCardButton = document.createElement('button');
+    chooseAnotherCardButton.textContent = 'Choose a Different Card';
+    chooseAnotherCardButton.classList.add('choose_another')
+
+    var flexContainer = document.createElement('div');
+    flexContainer.classList.add('flex_container');
+
+    var imageContainer = document.createElement('div');
+    imageContainer.classList.add('image_container');
+
+    var image = new Image(200, 300);
+    selectedCard = new Image(100, 200);
+    const cardIdx = Math.floor(Math.random() * cardPaths.length);
+    image.src = cardPaths[cardIdx];
+    selectedCard.src = cardPaths[cardIdx];
+
+    var title = createTitle();
+    var cardDescription = createCardDescription(title, cardIdx);
+
+    chooseAnotherCardButton.addEventListener('click', chooseAnotherCardButtonEvent);
+    image.style.maxWidth = '100%';
+    imageContainer.appendChild(image);
+
+    // Create a container for the text on the right side
+    var infoContainer = document.createElement('div');
+    infoContainer.classList.add('info_container')
+
+    // Append all information
+    container.appendChild(flexContainer);
+    flexContainer.appendChild(imageContainer);
+    flexContainer.appendChild(infoContainer);
+    infoContainer.appendChild(title);
+    infoContainer.appendChild(cardDescription);
+    infoContainer.appendChild(chooseAnotherCardButton);
+    return container
+}
+
+function createTitle() {
+    var title = document.createElement('h1');
+    var randomTitle = Math.random() < 0.5 ? 'Yes' : 'No';
+    title.textContent = randomTitle;
+    return title
+}
+
+function createCardDescription(title, cardIdx) {
+    var cardDescription = document.createElement('p');
+    if (cardDescription == 'Yes') {
+        cardDescription.textContent = yesAnswers[cardIdx];
+    }
+    else {
+        cardDescription.textContent = noAnswers[cardIdx];
+    }
+    return cardDescription;
+}
+
+function chooseAnotherCardButtonEvent() {
+    if (!bottomCardContainer) {
+        bottomCardContainer = document.createElement('div');
+        bottomCardContainer.classList.add('bottom_card_container')
+        document.body.appendChild(bottomCardContainer);
+    }
+    else if (selectedCard && bottomCardContainer) {
+        bottomCardContainer.innerHTML = ''; 
+        selectedCard.style.visibility = 'visible';
+    }
+    bottomCardContainer.appendChild(selectedCard);
+    currCard.style.visibility = 'visible';
+    document.body.removeChild(container);
+    isCardSelected = false;
+}
+
+function submitButtonClickEvent(event) {
     event.preventDefault(); 
     if (textEnabled){
         var input = document.getElementById('question').value; 
@@ -141,5 +132,4 @@ submitButton.addEventListener('click', function(event) {
         submitButton.textContent = 'Submit';
         textEnabled = true;
     }
-});
-
+}
