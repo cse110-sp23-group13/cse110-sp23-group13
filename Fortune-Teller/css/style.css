@@ -188,6 +188,8 @@ body{
     outline-offset: -5px;
     outline-color: #051D41;
     outline-width: 3px;
+    position: 'fixed';
+
 }
 
 .choose_another {
@@ -208,8 +210,32 @@ body{
     outline: none;
 }
 
-header img {
-    width: 75px;
-    margin-top: 5px;
-    margin-left: 5px;
+.flex_container {
+    display: flex;
+}
+
+.image_container {
+    padding: 10px;
+    height : 500px;
+    width: 200px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.info_container {
+    padding: 10px;
+    display: flex;
+    flex-direction: column; 
+    justify-content: center; 
+    overflow: auto; 
+    height: 500px;
+    width: 200px;
+}
+
+.bottom_card_container {
+    position: fixed;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
 }
