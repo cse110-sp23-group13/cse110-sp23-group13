@@ -218,3 +218,10 @@ header img {
     margin-top: 5px;
     margin-left: 5px;
 }
+
+.bottom_card_container {
+    position: fixed;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+}
