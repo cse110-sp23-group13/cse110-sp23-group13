@@ -2,6 +2,10 @@
     font-family: 'Merriweather', serif;
 }
 
+p {
+    font-family: 'Karla', sans-serif;
+}
+
 body{
     background-image: url("../images/backgroundImage.jpeg");
     background-size: 100% auto;
@@ -175,33 +179,34 @@ body{
 }
 
 .overlay {
+    color: #F1E2C3;
     position: fixed;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    background-color: #F8E8E2;
+    background-color: #051D41;
     padding: 20px;
     text-align: center;
     font-size: 11pt;
     border-radius: 10px; /* Rounded edges */
     outline: solid;
     outline-offset: -5px;
-    outline-color: #051D41;
+    outline-color: #F1E2C3;
     outline-width: 3px;
 }
 
 .choose_another {
     display: inline-block;
     padding: 10px 20px;
-    background-color: #184588;
-    color: #F8E8E2;
+    background-color: #F1E2C3;
+    color: #051D41;
     transition: background-color 0.3s ease;
     border-radius: 10px;
     border: none;
 }
 
 .choose_another:hover {
-    background-color: #051D41;
+    background-color: #9E9583;
 }
 
 .choose_another:focus {
