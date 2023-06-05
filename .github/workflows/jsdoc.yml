@@ -3,7 +3,7 @@ name: Generate JSDoc
 on:
   push:
     branches: 
-      - DongyangLi6816-patch-2
+      - '**'
 permissions:
   contents: write
 
@@ -32,10 +32,10 @@ jobs:
       run: |
         git config --local user.email "action@github.com"
         git config --local user.name "GitHub Action"
-        git checkout DongyangLi6816-patch-2
+        git checkout ${{ github.ref }}
         git add -A
         git commit -m "Generated JSDoc"
         git remote set-url origin https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/cse110-sp23-group13/cse110-sp23-group13.git
-        git push origin DongyangLi6816-patch-2
+        git push origin ${{ github.ref }}
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
