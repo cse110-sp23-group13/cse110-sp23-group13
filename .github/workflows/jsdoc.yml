@@ -38,6 +38,6 @@ jobs:
         git checkout $(echo ${GITHUB_REF#refs/heads/})
         git add -A
         git commit -m "Generated JSDoc"
-        git push origin $(echo ${GITHUB_REF#refs/heads/})
+        git push https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/cse110-sp23-group13/cse110-sp23-group13.git $(echo ${GITHUB_REF#refs/heads/})
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
