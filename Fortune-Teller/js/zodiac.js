@@ -1,3 +1,11 @@
+/**
+ * findZodiacSign function - calculates the user's zodiac sign based on their inputted date of birth.
+ * It displays the zodiac sign's name, type and description in an HTML element with the ID "result".
+ *
+ * @function findZodiacSign
+ * @returns {void} This function doesn't return anything. It modifies the innerHTML property of an HTML element with the ID "result".
+ *
+ */
 function findZodiacSign() {
     // Get the birth date value entered by the user
     var birthDateInput = document.getElementById("birth-date");

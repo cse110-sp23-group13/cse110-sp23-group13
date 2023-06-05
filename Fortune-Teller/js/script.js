@@ -18,12 +18,19 @@ var instructions = document.getElementById('instructions');
 var textEnabled = true;
 var currCard = null;
 
+/**
+ * The init function sets up the event listeners for deck and submitButton and preloads the cards.
+ */
 function init(){
     preloadCards()
     deck.addEventListener('click', cardClickEvent);
     submitButton.addEventListener('click', submitButtonClickEvent)
 };
 
+/**
+ * Preloads card images to improve performance.
+ * Iterates over the array of card paths and creates a new Image object for each one, setting its src property to the path.
+ */
 function preloadCards() {
     for (var i = 0; i < cardPaths.length; i++) {
         var img = new Image();
@@ -31,6 +38,12 @@ function preloadCards() {
     }
 }
 
+/**
+ * Event handler for a click on a card.
+ * Checks if a card is already selected or if the clicked target isn't a card. If so, it returns without doing anything.
+ * Otherwise, it hides the clicked card and creates an overlay containing the selected card.
+ * @param {Event} event - The click event
+ */
 function cardClickEvent(event) {
     if (isCardSelected || !event.target.classList.contains('card')) {
         return;
@@ -42,6 +55,12 @@ function cardClickEvent(event) {
     document.body.appendChild(container);
 }
 
+/**
+ * Creates the card container for the selected card.
+ * This involves creating the layout, adding the card image, and populating it with information like title and card description.
+ * Also sets up a button to choose a different card.
+ * @returns {HTMLElement} - The card container
+ */
 function createCardContainer() {
     var container = document.createElement('div');
     container.classList.add('overlay');
@@ -83,6 +102,10 @@ function createCardContainer() {
     return container
 }
 
+/**
+ * Generates a random title (Yes or No) for the card.
+ * @returns {HTMLElement} - The title element
+ */
 function createTitle() {
     var title = document.createElement('h1');
     var randomTitle = Math.random() < 0.5 ? 'Yes' : 'No';
@@ -90,6 +113,13 @@ function createTitle() {
     return title
 }
 
+/**
+ * Creates a description for the card based on the title and a random index.
+ * If the title is "Yes", it uses the yesAnswers array, otherwise it uses the noAnswers array.
+ * @param {HTMLElement} title - The title element
+ * @param {number} cardIdx - The index to use for the answer arrays
+ * @returns {HTMLElement} - The description element
+ */
 function createCardDescription(title, cardIdx) {
     var cardDescription = document.createElement('p');
     if (cardDescription == 'Yes') {
@@ -101,6 +131,11 @@ function createCardDescription(title, cardIdx) {
     return cardDescription;
 }
 
+/**
+ * Event handler for the "Choose a Different Card" button.
+ * If a card is already chosen, it makes the current card visible again and removes the card container overlay.
+ * Also shows the selected card at the bottom of the screen.
+ */
 function chooseAnotherCardButtonEvent() {
     if (!bottomCardContainer) {
         bottomCardContainer = document.createElement('div');
@@ -117,6 +152,11 @@ function chooseAnotherCardButtonEvent() {
     isCardSelected = false;
 }
 
+/**
+ * Event handler for the submit button click.
+ * Handles showing and hiding the question input field, updating the question, and toggling visibility of the deck and instructions.
+ * @param {Event} event - The click event
+ */
 function submitButtonClickEvent(event) {
     event.preventDefault(); 
     if (textEnabled){
