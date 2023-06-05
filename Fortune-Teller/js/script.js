@@ -19,10 +19,17 @@ var textEnabled = true;
 var currCard = null;
 
 function init(){
-    /* Check when card is clicked */
+    preloadCards()
     deck.addEventListener('click', cardClickEvent);
     submitButton.addEventListener('click', submitButtonClickEvent)
 };
+
+function preloadCards() {
+    for (var i = 0; i < cardPaths.length; i++) {
+        var img = new Image();
+        img.src = cardPaths[i];
+    }
+}
 
 function cardClickEvent(event) {
     if (isCardSelected || !event.target.classList.contains('card')) {
