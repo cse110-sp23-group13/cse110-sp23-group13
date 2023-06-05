@@ -39,5 +39,3 @@ jobs:
         git push origin DongyangLi6816-patch-2
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-
-change this to work on the mian branch
