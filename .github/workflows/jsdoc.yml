@@ -26,7 +26,7 @@ jobs:
       run: npm install
 
     - name: Generate JSDoc
-      run: ./node_modules/.bin/jsdoc ./Fortune-Teller/js
+      run: ./node_modules/.bin/jsdoc ./Fortune-Teller/js/script.js
 
     - name: Commit and push to docs branch
       run: |
