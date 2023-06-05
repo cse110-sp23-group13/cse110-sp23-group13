@@ -4,5 +4,3 @@
 
 
 [Fortune Telling website](https://cse110-sp23-group13.github.io/cse110-sp23-group13/Fortune-Teller)
-
-lol
