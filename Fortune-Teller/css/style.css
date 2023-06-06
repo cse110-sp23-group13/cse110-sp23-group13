@@ -107,34 +107,4 @@ header {
     margin-top: 10px; 
     height: 50px;
     width: 80px;
-    
-
-.flex_container {
-    display: flex;
 }
-
-.image_container {
-    padding: 10px;
-    height : 500px;
-    width: 200px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-}
-
-.info_container {
-    padding: 10px;
-    display: flex;
-    flex-direction: column; 
-    justify-content: center; 
-    overflow: auto; 
-    height: 500px;
-    width: 200px;
-}
-
-.bottom_card_container {
-    position: fixed;
-    bottom: 10px;
-    left: 50%;
-    transform: translateX(-50%);
-}}
