@@ -82,7 +82,7 @@ function createCardContainer() {
     imageContainer.classList.add('image_container');
 
     var image = new Image(200, 300);
-    selectedCard = new Image(100, 200);
+    selectedCard = new Image(133, 200);
     const cardIdx = Math.floor(Math.random() * cardPaths.length);
     image.src = cardPaths[cardIdx];
     selectedCard.src = cardPaths[cardIdx];
