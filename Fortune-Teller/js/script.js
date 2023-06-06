@@ -35,11 +35,17 @@ function cardClickEvent(event) {
     if (isCardSelected || !event.target.classList.contains('card')) {
         return;
     }
+    playFlipSound();
     currCard = event.target;
     currCard.style.visibility = 'hidden';
     isCardSelected = true;
     container = createCardContainer(currCard)
     document.body.appendChild(container);
+}
+
+function playFlipSound() {
+    var audio = document.getElementById('flipSound');
+    audio.play();
 }
 
 function createCardContainer() {
