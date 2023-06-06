@@ -1,0 +1,41 @@
+name: Generate JSDoc
+
+on:
+  push:
+    branches: 
+      - '**'
+permissions:
+  contents: write
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Check out repo
+      uses: actions/checkout@v2
+      with:
+        persist-credentials: false  # Needed to avoid GitHub auto adding a token
+
+    - name: Setup Node.js environment
+      uses: actions/setup-node@v2
+      with:
+        node-version: '14'
+    
+    - name: Install dependencies
+      run: npm install
+
+    - name: Generate JSDoc
+      run: ./node_modules/.bin/jsdoc ./Fortune-Teller/js
+
+    - name: Commit and push to docs branch
+      run: |
+        git config --local user.email "action@github.com"
+        git config --local user.name "GitHub Action"
+        git checkout ${{ github.ref }}
+        git add -A
+        git commit -m "Generated JSDoc"
+        git remote set-url origin https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/cse110-sp23-group13/cse110-sp23-group13.git
+        git push origin ${{ github.ref }}
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

@@ -2,6 +2,10 @@
     font-family: 'Merriweather', serif;
 }
 
+p {
+    font-family: 'Karla', sans-serif;
+}
+
 body{
     background-image: url("../images/backgroundImage.jpeg");
     background-size: 100% auto;
@@ -31,12 +35,14 @@ body{
 
 #question-box {
     margin: 0 auto;
+    margin-top: 15%;
     position: relative;
     text-align: center;
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
+    transition: margin-top 1s ease;
 }
 
 #question-form {
@@ -70,6 +76,30 @@ body{
     text-align: center;
     color: #F1E2C3;
     margin-top: 100px;
+}
+
+.button-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.button {
+    padding: 20px 40px;
+    font-size: 24px;
+    margin-bottom: 20px;
+    width: 300px;
+    background-color: #F1E2C3;
+    color: #323232;
+    border-radius: 10px;
+    outline-offset: -3px;
+    outline-style: solid;
+    outline-color: #323232;
+    border-style: none;
+}
+
+.button:hover {
+    background-color: #9E9583;
 }
 
 .container {
@@ -149,33 +179,36 @@ body{
 }
 
 .overlay {
+    color: #F1E2C3;
     position: fixed;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    background-color: #F8E8E2;
+    background-color: #051D41;
     padding: 20px;
     text-align: center;
     font-size: 11pt;
     border-radius: 10px; /* Rounded edges */
     outline: solid;
     outline-offset: -5px;
-    outline-color: #051D41;
+    outline-color: #F1E2C3;
     outline-width: 3px;
+    position: 'fixed';
+
 }
 
 .choose_another {
     display: inline-block;
     padding: 10px 20px;
-    background-color: #184588;
-    color: #F8E8E2;
+    background-color: #F1E2C3;
+    color: #051D41;
     transition: background-color 0.3s ease;
     border-radius: 10px;
     border: none;
 }
 
 .choose_another:hover {
-    background-color: #051D41;
+    background-color: #9E9583;
 }
 
 .choose_another:focus {
@@ -187,6 +220,7 @@ header img {
     margin-top: 5px;
     margin-left: 5px;
 }
+
 #option-page {
     margin-top: 10px;
 }
@@ -239,4 +273,35 @@ body {
     height: 50px;
     width: 80px;
     
+=======
+
+.flex_container {
+    display: flex;
+}
+
+.image_container {
+    padding: 10px;
+    height : 500px;
+    width: 200px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.info_container {
+    padding: 10px;
+    display: flex;
+    flex-direction: column; 
+    justify-content: center; 
+    overflow: auto; 
+    height: 500px;
+    width: 200px;
+}
+
+.bottom_card_container {
+    position: fixed;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+
 }

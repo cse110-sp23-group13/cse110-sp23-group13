@@ -25,7 +25,8 @@ const yesCards = [
     "The Hermit represents introspection, solitude, and inner wisdom. Its presence suggests a 'yes' to your question. This card assures you that by seeking inner guidance and taking time for self-reflection, you will find the answers you seek. Embrace solitude as an opportunity for growth and trust in your inner wisdom. The path to your desired outcome lies within; trust in your own light and follow it with confidence.",
     "The Moon represents intuition, mystery, and hidden knowledge. Its presence suggests a 'no' to your question. It indicates that there may be uncertainties or unseen factors influencing the situation. However, it advises you to trust your instincts and delve deeper for clarity. By navigating through the shadows, you can gain insights that lead to a positive outcome and eventually align with a 'yes' answer.",
     "The Sun card represents joy, positivity, and success. Its presence indicates a resounding 'yes' to your question. It signifies that you are on the right path and will experience happiness and fulfillment in your endeavors. This card assures you that the outcome will be favorable and that you can expect radiant energy and positive outcomes. Trust in your abilities and embrace the light of the Sun as you move forward.",
-]
+    "The Tower represents sudden upheaval, unexpected changes, and disruption. However, in this context, its presence suggests a potential 'yes' to your question. It signifies that the current situation or belief system may need to be dismantled for growth and transformation. Embrace the opportunity for change and embrace the unknown. Through the breakdown, you will find a breakthrough and ultimately reach a more favorable outcome."
+  ]
 
 const noAnswers = [
     "The Magician represents manifestation, power, and mastery. However, in this context, its presence suggests a potential 'no' to your question. It indicates that the necessary elements may not be aligned at this time. It advises caution in wielding your power and recommends reassessing your approach before moving forward. Take time to refine your skills and gather the resources needed for a more favorable outcome.",
@@ -36,7 +37,8 @@ const noAnswers = [
     "The Hermit represents introspection, solitude, and inner wisdom. Its presence suggests a potential 'no' to your question. It advises taking time for self-reflection and seeking clarity within. The Hermit cautions against rushing or seeking external validation. By embracing solitude and inner guidance, you can navigate away from potential pitfalls and find a more favorable outcome.",
     "The Moon represents intuition, mystery, and hidden knowledge. Its presence suggests a potential 'no' to your question. It indicates that there may be uncertainties or hidden factors influencing the situation. It advises caution and further exploration to uncover the truth before proceeding. By delving deeper and seeking clarity, you can avoid potential pitfalls and find a more favorable outcome.",
     "The Sun represents joy, positivity, and success. However, in this context, its presence suggests a potential 'no' to your question. It advises against overly optimistic expectations or being blinded by the light. It encourages a realistic assessment of the situation and potential challenges. By remaining grounded and prepared, you can navigate setbacks and find alternative paths towards a more favorable outcome.",
-]
+    "The Tower represents sudden upheaval, unexpected changes, and disruption. Its presence suggests a potential 'no' to your question. It signifies that the current path may lead to unexpected challenges or setbacks. It advises being prepared for major shifts and considering alternative approaches. By embracing adaptability and resilience, you can navigate through turbulent times and find a more favorable outcome."
+  ]
 
   // Export the Yes and No cards
   export { yesCards, noCards, yesAnswers, noAnswers};
