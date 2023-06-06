@@ -25,17 +25,19 @@ jobs:
     - name: Install dependencies
       run: npm install
 
+    - name: Install JSDoc
+      run: npm install --save-dev jsdoc
+
     - name: Generate JSDoc
       run: ./node_modules/.bin/jsdoc ./Fortune-Teller/js
 
-    - name: Commit and push to docs branch
+    - name: Commit and push to the triggering branch
       run: |
         git config --local user.email "action@github.com"
         git config --local user.name "GitHub Action"
-        git checkout ${{ github.ref }}
+        git checkout $(echo ${GITHUB_REF#refs/heads/})
         git add -A
         git commit -m "Generated JSDoc"
-        git remote set-url origin https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/cse110-sp23-group13/cse110-sp23-group13.git
-        git push origin ${{ github.ref }}
+        git push https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/cse110-sp23-group13/cse110-sp23-group13.git $(echo ${GITHUB_REF#refs/heads/})
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
