@@ -273,7 +273,6 @@ body {
     height: 50px;
     width: 80px;
     
-=======
 
 .flex_container {
     display: flex;
@@ -303,5 +302,4 @@ body {
     bottom: 10px;
     left: 50%;
     transform: translateX(-50%);
-
-}
+}}
