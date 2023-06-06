@@ -187,3 +187,56 @@ header img {
     margin-top: 5px;
     margin-left: 5px;
 }
+#option-page {
+    margin-top: 10px;
+}
+header {
+    display: flex;
+    flex-direction: column;
+    align-items: left;
+    margin-bottom: 10px;
+}
+body {
+    display: block;
+    justify-content: center;
+    align-items: center;
+    /* height: 100vh; */
+}
+
+.button-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.button {
+    padding: 20px 40px;
+    font-size: 24px;
+    margin-bottom: 20px;
+    width: 300px;
+    background-color: #F1E2C3;
+    color: #323232;
+    border-radius: 10px;
+    outline-offset: -3px;
+    outline-style: solid;
+    outline-color: #323232;
+    border-style: none;
+}
+.button1{
+    font-size: 20px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    background-color: #F1E2C3;
+    color: #323232;
+    border-radius: 10px;
+    outline-offset: -3px;
+    outline-style: solid;
+    outline-color: #323232;
+    border-style: none;
+}
+.feedbackButton, .settings {
+    margin-top: 10px; 
+    height: 50px;
+    width: 80px;
+    
+}
