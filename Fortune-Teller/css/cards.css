@@ -1,13 +1,14 @@
 /* question styling*/
-#question{
+.question{
     background-color: #f3ECDF;
     font-size: 20pt;
     width: 75%;
     border: none;
     border-radius: 10px;
+    height: 60px;
 }
 
-#question-text{
+.question-text{
     background-color: #323232;
     color: #F1E2C3;
     border-radius: 10px;
@@ -20,7 +21,7 @@
     word-wrap:break-word;
 }
 
-#question-box {
+.question-box {
     margin: 0 auto;
     margin-top: 15%;
     position: relative;
@@ -39,7 +40,7 @@
     width: 500px;
 }
 
-#question-box button{
+.question-box button{
     background-color: #F1E2C3;
     color: #323232;
     border-radius: 10px;
@@ -53,7 +54,7 @@
     transition: background-color 0.3s ease;
 }
 
-#question-box button:hover {
+.question-box button:hover {
     background-color: #9E9583;
 }
 
@@ -166,4 +167,11 @@
     bottom: 10px;
     left: 50%;
     transform: translateX(-50%);
+}
+
+#pick2-box {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    width: 500px;
 }
