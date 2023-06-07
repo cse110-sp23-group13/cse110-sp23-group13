@@ -11,6 +11,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Karla:wght@300&display=swap" rel="stylesheet">
   <link rel="icon" type="image/x-icon" href="images/favicon.png">
   <link rel="stylesheet" href="css/style.css">
+  <script src="./js/feedback.js" type="module"></script>
 </head>
 <body>
   <header>
@@ -27,29 +28,11 @@
       <div id="form-container">
         <form id="suggestionForm">
           <!-- <label for="suggestion">Enter your suggestion:</label><br> -->
-          <textarea id="suggestion" name="suggestion" rows="16" cols="75"></textarea><br><br>
-          <input type="submit" value="Submit">
+          <textarea id="suggestion" name="suggestion" rows="10" cols="75"></textarea><br><br>
+          <button value="submit">Submit</button>
         </form>
       </div>
     </div>
   </main>
-
-  <script>
-    document.getElementById("suggestionForm").addEventListener("submit", function(event) {
-      event.preventDefault(); // Prevent form submission
-      
-      // Get the user's suggestion
-      var suggestion = document.getElementById("suggestion").value;
-      
-      // Process the suggestion (you can replace this with your own logic)
-      console.log("Received suggestion:", suggestion);
-      
-      // Clear the input field
-      document.getElementById("suggestion").value = "";
-      
-      // Display a thank you message in a popup
-      alert("Thank you for your submission!");
-    });
-  </script>
 </body>
 </html>

@@ -11,6 +11,23 @@ body{
     background-size: 100% auto;
 }
 
+button {
+    background-color: #F1E2C3;
+    color: #323232;
+    border-radius: 10px;
+    outline-offset: -3px;
+    outline-style: solid;
+    outline-color: #323232;
+    border-style: none;
+    padding: 20px 10px;
+    font-size: 14pt;
+}
+
+button:hover {
+    background-color: #9E9583;
+    transition: background-color 0.3s ease;
+}
+
 /* menu styling */
 #index-page, #feedback-page, #option-page, #card-page h1{
     text-align: center;
@@ -109,4 +126,13 @@ header {
     margin-top: 10px; 
     height: 50px;
     width: 80px;
+}
+
+#suggestion {
+    background-color: #f3ECDF;
+    font-size: 20pt;
+    width: 75%;
+    border: none;
+    border-radius: 10px;
+    font-family: 'Karla', sans-serif;
 }
