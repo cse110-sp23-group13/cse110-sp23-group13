@@ -40,21 +40,7 @@
 }
 
 #question-box button{
-    background-color: #F1E2C3;
-    color: #323232;
-    border-radius: 10px;
-    outline-offset: -3px;
-    outline-style: solid;
-    outline-color: #323232;
-    border-style: none;
-    padding: 20px 10px;
-    font-size: 14pt;
     width: 20%;
-    transition: background-color 0.3s ease;
-}
-
-#question-box button:hover {
-    background-color: #9E9583;
 }
 
 /* cards styling */
