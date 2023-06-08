@@ -15,7 +15,7 @@ button {
     background-color: #F1E2C3;
     color: #323232;
     border-radius: 10px;
-    outline-offset: -3px;
+    outline-offset: -5px;
     outline-style: solid;
     outline-color: #323232;
     border-style: none;
@@ -46,18 +46,6 @@ button:hover {
     font-size: 24px;
     margin-bottom: 20px;
     width: 300px;
-    background-color: #F1E2C3;
-    color: #323232;
-    border-radius: 10px;
-    outline-offset: -3px;
-    outline-style: solid;
-    outline-color: #323232;
-    border-style: none;
-    transition: background-color 0.3s ease;
-}
-
-.button:hover {
-    background-color: #9E9583;
 }
 
 .container {
@@ -108,18 +96,6 @@ header {
     font-size: 20px;
     margin-top: 10px;
     margin-bottom: 10px;
-    background-color: #F1E2C3;
-    color: #323232;
-    border-radius: 10px;
-    outline-offset: -3px;
-    outline-style: solid;
-    outline-color: #323232;
-    border-style: none;
-    transition: background-color 0.3s ease;
-}
-
-.sideButton:hover {
-    background-color: #9E9583;
 }
 
 .feedbackButton, .settings {
