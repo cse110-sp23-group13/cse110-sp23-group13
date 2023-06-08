@@ -2,7 +2,6 @@
 .question{
     background-color: #f3ECDF;
     font-size: 20pt;
-    width: 75%;
     border: none;
     border-radius: 10px;
     height: 60px;
@@ -17,19 +16,19 @@
     font-size: xx-large;
     text-align: center;
     padding: 10px;
-    max-width: 90%;
     word-wrap:break-word;
 }
 
 .question-box {
     margin: 0 auto;
-    margin-top: 15%;
-    position: relative;
     text-align: center;
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
+    max-width: 70%;
+    margin-top: 20%;
+    position: relative;
     transition: margin-top 1s ease;
 }
 
@@ -41,21 +40,9 @@
 }
 
 .question-box button{
-    background-color: #F1E2C3;
-    color: #323232;
-    border-radius: 10px;
-    outline-offset: -3px;
-    outline-style: solid;
-    outline-color: #323232;
-    border-style: none;
     padding: 20px 10px;
     font-size: 14pt;
     width: 20%;
-    transition: background-color 0.3s ease;
-}
-
-.question-box button:hover {
-    background-color: #9E9583;
 }
 
 /* cards styling */
@@ -66,6 +53,7 @@
     justify-content: center;
     align-items: center;
     visibility: hidden;
+    position: relative;
 }
 
 #deck img {
@@ -126,19 +114,6 @@
 .choose_another {
     display: inline-block;
     padding: 10px 20px;
-    background-color: #F1E2C3;
-    color: #051D41;
-    transition: background-color 0.3s ease;
-    border-radius: 10px;
-    border: none;
-}
-
-.choose_another:hover {
-    background-color: #9E9583;
-}
-
-.choose_another:focus {
-    outline: none;
 }
 
 .flex_container {
