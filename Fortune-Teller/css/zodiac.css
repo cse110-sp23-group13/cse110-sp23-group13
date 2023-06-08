@@ -58,6 +58,16 @@ input[type="text"] {
     font-size: 20px;
 }
 
-#result img {
+#symbol {
     height: 125px;
+}
+
+#star {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    opacity: 25%;
+    z-index: -1;
+    width: 100%;
 }

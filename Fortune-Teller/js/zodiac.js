@@ -107,9 +107,17 @@ function findZodiacSign() {
       var resultElement = document.getElementById("result");
       resultElement.innerHTML = "Your zodiac is: " + zodiacSign + "<br>" +
                                 zodiacSignType + "<br><br>";
+      
+      var star = document.createElement('img');
+      star.src = `./images/stars/${zodiacSign}.png`;
+      star.setAttribute('id', 'star');
+      resultElement.appendChild(star);
+
       var symbol = document.createElement('img');
       symbol.src = `./images/signs/${zodiacSign}.png`;
+      symbol.setAttribute('id', 'symbol');
       resultElement.appendChild(symbol);
+
       var descriptionElement = document.createElement("p");
       descriptionElement.textContent = zodiacSignDescription;
       resultElement.appendChild(descriptionElement);
