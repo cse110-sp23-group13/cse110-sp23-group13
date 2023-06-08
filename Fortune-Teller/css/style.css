@@ -1,3 +1,4 @@
+/* global default styling */
 * {
     font-family: 'Merriweather', serif;
 }
@@ -27,6 +28,12 @@ button {
 button:hover {
     background-color: #9E9583;
     transition: background-color 0.3s ease;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    margin: auto;
 }
 
 /* menu styling */
@@ -77,6 +84,10 @@ button:hover {
 #landing-logo:hover {
     height: 52vh;
     transition: height 0.3s ease;
+}
+
+.website-header {
+    top: 25px;
 }
 
 .website-footer {

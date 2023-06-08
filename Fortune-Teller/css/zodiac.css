@@ -17,7 +17,7 @@
     transform: translate(-50%, -50%);
 }
 
-#zodiac-page label {
+label {
     text-align: center;
     display: block;
     margin-top: 5px;
@@ -26,11 +26,11 @@
     font-size: 18px;
 }
 
-#zodiac-page input {
+input {
     padding: 10px;
 }
 
-#zodiac-page input[type="text"] {
+input[type="text"] {
     width: 80%;
     padding: 10px;
     font-size: 20px;
@@ -50,10 +50,14 @@
     font-family: 'Times New Roman', Times, serif;
 }
 
-#zodiac-page #result {
+#result {
     margin-top: 20px;
     text-align: center;
     font-weight: bold;
     color: #F1E2C3;
     font-size: 20px;
+}
+
+#result img {
+    height: 125px;
 }
