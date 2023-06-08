@@ -17,11 +17,20 @@ var questionBox = document.getElementById('question-box');
 var instructions = document.getElementById('instructions');
 var textEnabled = true;
 var currCard = null;
+var errorMessages = [
+    "Meow!! Are you playing with me, human? Please ask a yes/no question.",
+    "Hiss! That doesn't seem like a yes/no question.",
+    "Purr... Ask me something I can answer with yes or no.",
+    "Cat got your tongue? That's not a yes/no question.",
+    "Mrow? Could you rephrase that as a yes/no question?"
+];
+var isQuestionValid = false; // Flag to track if the question is valid
+
 
 /**
  * The init function sets up the event listeners for deck and submitButton and preloads the cards.
  */
-function init(){
+function init() {
     preloadCards()
     deck.addEventListener('click', cardClickEvent);
     submitButton.addEventListener('click', submitButtonClickEvent)
@@ -40,12 +49,13 @@ function preloadCards() {
 
 /**
  * Event handler for a click on a card.
- * Checks if a card is already selected or if the clicked target isn't a card. If so, it returns without doing anything.
+ * Checks if a card is already selected, if the clicked target isn't a card, or if the question isn't valid.
+ * If any of these conditions are true, it returns without doing anything.
  * Otherwise, it hides the clicked card and creates an overlay containing the selected card.
  * @param {Event} event - The click event
  */
 function cardClickEvent(event) {
-    if (isCardSelected || !event.target.classList.contains('card')) {
+    if (!isQuestionValid || isCardSelected || !event.target.classList.contains('card')) {
         return;
     }
     playFlipSound();
@@ -149,7 +159,7 @@ function chooseAnotherCardButtonEvent() {
         document.body.appendChild(bottomCardContainer);
     }
     else if (selectedCard && bottomCardContainer) {
-        bottomCardContainer.innerHTML = ''; 
+        bottomCardContainer.innerHTML = '';
         selectedCard.style.visibility = 'visible';
     }
     bottomCardContainer.appendChild(selectedCard);
@@ -158,22 +168,59 @@ function chooseAnotherCardButtonEvent() {
     isCardSelected = false;
 }
 
+function isYesNoQuestion(question) {
+    // Convert to lowercase and trim white spaces
+    question = question.toLowerCase().trim();
+
+    // Check if the question starts with 'is', 'are', 'do', 'does', 'will', 'can', 'could', 'would', 'should'
+    if (/^is|^am|^are|^do|^does|^will|^can|^could|^would|^should/.test(question)) {
+        return true;
+    } else {
+        return false;
+    }
+}
+
+
 /**
  * Event handler for the submit button click.
  * Handles showing and hiding the question input field, updating the question, and toggling visibility of the deck and instructions.
+ * It also checks if the input question is a yes/no question and sets the isQuestionValid flag accordingly.
  * @param {Event} event - The click event
  */
 function submitButtonClickEvent(event) {
-    event.preventDefault(); 
-    if (textEnabled){
-        var input = document.getElementById('question').value; 
+    event.preventDefault();
+    if (textEnabled) {
+        var input = document.getElementById('question').value;
         if (input.trim() === '') {
             return;
         }
+
+        // Add your validation check here
+        if (!isYesNoQuestion(input)) {
+            // Select a random error message
+            var randomIndex = Math.floor(Math.random() * errorMessages.length);
+            var randomErrorMessage = errorMessages[randomIndex];
+
+            // Display the error message
+            var errorMessage = document.getElementById('error-message');
+            errorMessage.textContent = randomErrorMessage;
+            errorMessage.style.display = 'block';
+            // Set the flag to false since the question is not valid
+            isQuestionValid = false;
+
+            return false;
+        }
+
+        var errorMessage = document.getElementById('error-message');
+        if (errorMessage) {
+            errorMessage.style.display = 'none';
+        }
+        isQuestionValid = true;
+
         //display question
         questionBox.style.marginTop = 0;
         questionText.textContent = input;
-        question.style.display = 'none'; 
+        question.style.display = 'none';
         submitButton.textContent = 'Update Question';
         //show deck and instructions
         instructions.classList.add('fade-in')
@@ -185,8 +232,8 @@ function submitButtonClickEvent(event) {
     }
     else {
         //show input box
-        question.style.display = 'flex'; 
-        document.getElementById('question').value = ''; 
+        question.style.display = 'flex';
+        document.getElementById('question').value = '';
         questionText.textContent = 'What question do you want answered?'; // Reset the h1 tag's content
         submitButton.textContent = 'Submit';
         textEnabled = true;
