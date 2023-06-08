@@ -2,7 +2,6 @@
 .question{
     background-color: #f3ECDF;
     font-size: 20pt;
-    width: 75%;
     border: none;
     border-radius: 10px;
     height: 60px;
@@ -17,19 +16,19 @@
     font-size: xx-large;
     text-align: center;
     padding: 10px;
-    max-width: 90%;
     word-wrap:break-word;
 }
 
 .question-box {
     margin: 0 auto;
-    margin-top: 15%;
-    position: relative;
     text-align: center;
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
+    max-width: 70%;
+    margin-top: 20%;
+    position: relative;
     transition: margin-top 1s ease;
 }
 
@@ -54,6 +53,7 @@
     justify-content: center;
     align-items: center;
     visibility: hidden;
+    position: relative;
 }
 
 #deck img {

@@ -21,6 +21,7 @@ button {
     border-style: none;
     padding: 20px 10px;
     font-size: 14pt;
+    transition: background-color 0.3s ease;
 }
 
 button:hover {
@@ -48,14 +49,6 @@ button:hover {
     width: 300px;
 }
 
-.container {
-    display: flex;
-    flex-direction: column;
-    margin: auto;
-    /* position: absolute; */
-    /* top: 50%; */
-}
-
 #form-container {
     display: flex;
     flex-direction: column;
@@ -74,13 +67,36 @@ button:hover {
 #landing-logo {
     height: 50vh;
     margin: auto;
-    display: block;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    transition: height 0.3s ease;
+}
+
+#landing-logo:hover {
+    height: 52vh;
+    transition: height 0.3s ease;
+}
+
+.website-footer {
+    left: 50%;
+    transform: translate(-50%, -50%);
+    position: absolute;
+    bottom: 25px;
+    width: 100%;
 }
 
 header img {
     width: 100px;
     margin-top: 5px;
     margin-left: 5px;
+    transition: opacity 0.3s ease;
+}
+
+header img:hover {
+    opacity: 0.85;
+    transition: opacity 0.3s ease;
 }
 
 header {
@@ -89,6 +105,10 @@ header {
 
 #option-page {
     margin-top: 10px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
 }
 
 .sideButton{
@@ -111,4 +131,9 @@ header {
     border: none;
     border-radius: 10px;
     font-family: 'Karla', sans-serif;
+}
+header {
+    position: absolute;
+    margin: 0px;
+    top: 0px
 }
