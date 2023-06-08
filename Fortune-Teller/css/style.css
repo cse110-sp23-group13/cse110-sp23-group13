@@ -72,7 +72,7 @@ button:hover {
 }
 
 #landing-logo {
-    height: 50vh;
+    height: 50%;
     margin: auto;
     position: absolute;
     top: 50%;
@@ -82,20 +82,22 @@ button:hover {
 }
 
 #landing-logo:hover {
-    height: 52vh;
+    height: 52%;
     transition: height 0.3s ease;
 }
 
-.website-header {
-    top: 25px;
+.website-title {
+    margin-top: 10%;
+    text-shadow: 0px 0px 10px #f3ECDF;
 }
 
 .website-footer {
     left: 50%;
     transform: translate(-50%, -50%);
     position: absolute;
-    bottom: 25px;
+    bottom: 10%;
     width: 100%;
+    text-shadow: 0px 0px 10px #f3ECDF;
 }
 
 header img {
@@ -146,5 +148,6 @@ header {
 header {
     position: absolute;
     margin: 0px;
-    top: 0px
+    top: 0px;
+    max-width: 200px;
 }
