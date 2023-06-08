@@ -2,8 +2,8 @@ name: Generate JSDoc
 
 on:
   push:
-    branches: 
-      - '**'
+    branches:
+      - 'main'
 permissions:
   contents: write
 
@@ -31,13 +31,11 @@ jobs:
     - name: Generate JSDoc
       run: ./node_modules/.bin/jsdoc ./Fortune-Teller/js
 
-    - name: Commit and push to the triggering branch
-      run: |
-        git config --local user.email "action@github.com"
-        git config --local user.name "GitHub Action"
-        git checkout $(echo ${GITHUB_REF#refs/heads/})
-        git add -A
-        git commit -m "Generated JSDoc"
-        git push https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/cse110-sp23-group13/cse110-sp23-group13.git $(echo ${GITHUB_REF#refs/heads/})
-      env:
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+    - name: Create Pull Request
+      uses: peter-evans/create-pull-request@v3
+      with:
+        token: ${{ secrets.GITHUB_TOKEN }}
+        commit-message: "Generated JSDoc"
+        title: "Generated JSDoc"
+        body: "Updates JSDoc documentation"
+        branch: "generate-jsdoc-${{ github.run_id }}"
