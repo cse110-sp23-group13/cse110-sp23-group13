@@ -1,7 +1,7 @@
 describe('Basic user flow for Website', () => {
     // First, visit the website
     beforeAll(async () => {
-      await page.goto('https://cse110-sp23-group13.github.io/cse110-sp23-group13/Fortune-Teller/index.html');
+      await page.goto('http://localhost:8080/Fortune-Teller/');
     });
   
     // Next, Click on the black cat logo to check if it switches to the option page
@@ -19,7 +19,7 @@ describe('Basic user flow for Website', () => {
       let currentDomain = page.url();
 
       // Expect page to be the option.html page
-      expect(currentDomain).toBe('https://cse110-sp23-group13.github.io/cse110-sp23-group13/Fortune-Teller/option.html');
+      expect(currentDomain).toBe('http://localhost:8080/Fortune-Teller/option.html');
     });
 
   });
