@@ -21,7 +21,7 @@
     <link rel="stylesheet" href="./css/style.css">
     <link rel="stylesheet" href="./css/cards.css">
     <!-- Linking to external JavaScript file -->
-    <script src="./js/script.js" type="module"></script>
+    <script src="./js/draw2script.js" type="module"></script>
   </head>
   <body>
     <!-- Website header -->
@@ -47,9 +47,9 @@
         <input type="text" class="question" id="s-answer" autocomplete="off">
 
         <!-- Text Prompt for challenge -->
-        <h1 class="question-text" id="h-text">What is your Challenge?</h1>
+        <h1 class="question-text" id="c-text">What is your Challenge?</h1>
         <!-- Input box for user's challenge -->
-        <input type="text" class="question" id="h-answer" autocomplete="off">
+        <input type="text" class="question" id="c-answer" autocomplete="off">
         <!-- Button to submit form -->
         <button id="submitButton">Submit</button>
     </div>
@@ -57,7 +57,7 @@
     <!-- Container for card selection, presumably shown after a question is submitted -->
     <div id="card-page">
       <!-- Text Prompt -->
-      <h2 id="instructions">Pick a Card</h2>
+      <h2 id="instructions">Pick 2 Cards</h2>
       <!-- Container for card images -->
       <div id="deck">
         <!-- Each card is represented by an image. The same image is used for all as they're all face-down. -->

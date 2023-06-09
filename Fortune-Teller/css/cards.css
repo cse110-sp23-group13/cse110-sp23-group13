@@ -144,9 +144,29 @@
     transform: translateX(-50%);
 }
 
+.bottom_card_container img {
+    margin: 10px;
+}
+
 #pick2-box {
     display: flex;
     justify-content: center;
     gap: 15px;
     width: 500px;
+}
+
+.left_container {
+    width: 47%;
+    float: left;
+
+}
+
+.right_container {
+    width: 47%;
+    float: right;
+}
+
+.choose_container {
+    display: flex;
+    justify-content: center;
 }
