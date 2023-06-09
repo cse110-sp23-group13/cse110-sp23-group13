@@ -1,7 +1,7 @@
 describe('Basic user flow for Website', () => {
     // First, visit the website
     beforeAll(async () => {
-      await page.goto('http://localhost:8080/Fortune-Teller/');
+      await page.goto('http://localhost:80/Fortune-Teller/');
     });
   
     // Next, Click on the black cat logo to check if it switches to the option page
@@ -19,7 +19,7 @@ describe('Basic user flow for Website', () => {
       let currentDomain = page.url();
 
       // Expect page to be the option.html page
-      expect(currentDomain).toBe('http://localhost:8080/Fortune-Teller/option.html');
+      expect(currentDomain).toBe('http://localhost:80/Fortune-Teller/option.html');
     });
 
   });
