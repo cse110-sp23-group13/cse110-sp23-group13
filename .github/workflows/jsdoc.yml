@@ -15,7 +15,7 @@ jobs:
     - name: Check out repo
       uses: actions/checkout@v2
       with:
-        persist-credentials: false  # Needed to avoid GitHub auto adding a token
+        persist-credentials: true  # Needed to avoid GitHub auto adding a token
 
     - name: Setup Node.js environment
       uses: actions/setup-node@v2
