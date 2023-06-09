@@ -1,21 +1,40 @@
 <!DOCTYPE html>
 <html>
 <head>
+    <!-- The title of the webpage -->
     <title>Zodiac Sign Finder</title>
+    
+    <!-- The character encoding for the document -->
     <meta charset="UTF-8">
+    
+    <!-- The meta viewport is used for responsive web design to control the layout on mobile browsers -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- Ensuring proper rendering and touch zooming for all devices -->
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    
+    <!-- Linking the website icon -->
     <link rel="icon" type="image/x-icon" href="images/favicon.png">
+    
+    <!-- Preconnecting to font hosting servers for better load times -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    
+    <!-- Linking custom fonts from Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Merriweather&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Karla:wght@300&display=swap" rel="stylesheet">
+    
+    <!-- Linking to an external CSS stylesheets -->
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/zodiac.css">
+    
+    <!-- Linking to an external Javascript file -->
     <script src="js/zodiac.js"></script>
 </head>
 <body>
+    <!-- Website Header with site navigation -->
     <header>
+        <!-- Navigation buttons with links -->
         <a href="index.html">
             <img src="../admin/branding/catbubble.png">
         </a>
@@ -26,15 +45,25 @@
             <button class="sideButton">Settings</button>
         </a>
     </header>
+    
+    <!-- Main content of the page -->
     <div id="zodiac-page">
         <div class="container">
+            <!-- Heading of the page -->
             <h1>Zodiac Sign Finder</h1>
+            
+            <!-- User input for date of birth -->
             <label for="birth-date">Birth Date:</label>
             <input type="date" id="birth-date">
             <br>
+            
+            <!-- Button to execute the zodiac sign finder function -->
             <button onclick="findZodiacSign()">Find Zodiac Sign</button>
+            
+            <!-- Container to display the result -->
             <div id="result"></div>
         </div>
     </div>
 </body>
 </html>
+

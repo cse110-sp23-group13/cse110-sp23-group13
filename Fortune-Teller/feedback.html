@@ -1,34 +1,52 @@
 <!DOCTYPE html>
 <html>
 <head>
+  <!-- The title of the web page -->
   <title>Suggestion Box</title>
+  <!-- The character encoding for the document -->
   <meta charset="UTF-8">
+  <!-- The meta viewport is used for responsive web design to control the layout on mobile browsers -->
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- Ensuring proper rendering and touch zooming for all devices -->
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <!-- Preconnecting to font hosting servers for better load times -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <!-- Linking custom fonts from Google Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Merriweather&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Karla:wght@300&display=swap" rel="stylesheet">
+  <!-- Linking the website icon -->
   <link rel="icon" type="image/x-icon" href="images/favicon.png">
+  <!-- Linking to external stylesheets -->
   <link rel="stylesheet" href="css/style.css">
+  <!-- Linking to external JavaScript file -->
   <script src="./js/feedback.js" type="module"></script>
 </head>
 <body>
+  <!-- Website header -->
   <header>
+      <!-- Logo image linked to home page -->
       <a href="index.html">
           <img src="../admin/branding/catbubble.png">
       </a>
   </header>
+  <!-- Main content of the page -->
   <main>
+    <!-- Container for the feedback page -->
     <div id="feedback-page">
+      <!-- Container for the title of the feedback page -->
       <div class="feedback-title">
+        <!-- Title of the feedback page -->
         <h1>Suggestion Box</h1>
       </div>
       
+      <!-- Container for the suggestion form -->
       <div id="form-container">
+        <!-- The suggestion form -->
         <form id="suggestionForm">
-          <!-- <label for="suggestion">Enter your suggestion:</label><br> -->
+          <!-- Text input area for the suggestion. The commented out label can be used for accessibility purposes. -->
           <textarea id="suggestion" name="suggestion" rows="10" cols="75"></textarea><br><br>
+          <!-- Button to submit the form -->
           <button value="submit">Submit</button>
         </form>
       </div>
