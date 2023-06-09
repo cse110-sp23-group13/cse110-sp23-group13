@@ -138,7 +138,7 @@ function createTitle() {
  */
 function createCardDescription(title, cardIdx) {
     var cardDescription = document.createElement('p');
-    if (cardDescription == 'Yes') {
+    if (title.textContent == 'Yes') {
         cardDescription.textContent = yesAnswers[cardIdx];
     }
     else {
