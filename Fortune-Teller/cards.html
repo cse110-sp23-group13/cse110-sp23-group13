@@ -1,43 +1,66 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
+    <!-- The title of the web page -->
     <title>Card Reading</title>
+    <!-- The character encoding for the document -->
     <meta charset="UTF-8">
+    <!-- The meta viewport is used for responsive web design to control the layout on mobile browsers -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Ensuring proper rendering and touch zooming for all devices -->
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <!-- Linking the website icon -->
     <link rel="icon" type="image/x-icon" href="images/favicon.png">
+    <!-- Preconnecting to font hosting servers for better load times -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <!-- Linking custom fonts from Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Merriweather&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Karla:wght@300&display=swap" rel="stylesheet">
+    <!-- Linking to external stylesheets -->
     <link rel="stylesheet" href="./css/style.css">
     <link rel="stylesheet" href="./css/cards.css">
+    <!-- Linking to external JavaScript file -->
     <script src="./js/script.js" type="module"></script>
   </head>
   <body>
+    <!-- Website header -->
     <header>
+      <!-- Logo image linked to home page -->
       <a href="index.html">
           <img src="../admin/branding/catbubble.png">
       </a>
+      <!-- Link to Feedback page with a button -->
       <a href="feedback.html" class="feedbackLink">
           <button class="sideButton">Feedback Form</button>
       </a>
+      <!-- Link to Settings page with a button -->
       <a href="settings.html" class="siteSettings">
           <button class="sideButton">Settings</button>
       </a>
     </header>
+    <!-- Container for user input question -->
     <div class="question-box" id="question-box">
+      <!-- Text Prompt -->
       <h1 class="question-text" id="question-text">What question do you want answered?</h1>
+      <!-- Form for user to submit their question -->
       <form id="question-form">
+          <!-- Input box for user's question -->
           <input type="text" class="question" id="question" autocomplete="off">
+          <!-- Button to submit form -->
           <button id="submitButton">Submit</button>
       </form>
+      <!-- Placeholder for error message, initially hidden -->
       <div id="error-message" style="color: red; display: none;"></div>
     </div>
 
+    <!-- Container for card selection, presumably shown after a question is submitted -->
     <div id="card-page">
+      <!-- Text Prompt -->
       <h2 id="instructions">Pick a Card</h2>
+      <!-- Container for card images -->
       <div id="deck">
+        <!-- Each card is represented by an image. The same image is used for all as they're all face-down. -->
         <img src="./images/cardback.svg" class="card" id="c0">
         <img src="./images/cardback.svg" class="card" id="c1">
         <img src="./images/cardback.svg" class="card" id="c2">
@@ -50,6 +73,7 @@
       </div>
     </div>
 
+    <!-- Sound file for card flip effect -->
     <audio id="flipSound">
       <source src="./sounds/Card Flip - sound effect [TubeRipper.com].mp3" type="audio/mpeg">
     </audio>
