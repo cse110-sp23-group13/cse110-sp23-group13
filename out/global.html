@@ -113,7 +113,8 @@
 
 <div class="description">
     Event handler for a click on a card.
-Checks if a card is already selected or if the clicked target isn't a card. If so, it returns without doing anything.
+Checks if a card is already selected, if the clicked target isn't a card, or if the question isn't valid.
+If any of these conditions are true, it returns without doing anything.
 Otherwise, it hides the clicked card and creates an overlay containing the selected card.
 </div>
 
@@ -207,7 +208,7 @@ Otherwise, it hides the clicked card and creates an overlay containing the selec
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="script.js.html">script.js</a>, <a href="script.js.html#line47">line 47</a>
+        <a href="script.js.html">script.js</a>, <a href="script.js.html#line57">line 57</a>
     </li></ul></dd>
     
 
@@ -297,7 +298,7 @@ Also shows the selected card at the bottom of the screen.
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="script.js.html">script.js</a>, <a href="script.js.html#line145">line 145</a>
+        <a href="script.js.html">script.js</a>, <a href="script.js.html#line155">line 155</a>
     </li></ul></dd>
     
 
@@ -387,7 +388,7 @@ Also sets up a button to choose a different card.
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="script.js.html">script.js</a>, <a href="script.js.html#line70">line 70</a>
+        <a href="script.js.html">script.js</a>, <a href="script.js.html#line80">line 80</a>
     </li></ul></dd>
     
 
@@ -570,7 +571,7 @@ If the title is "Yes", it uses the yesAnswers array, otherwise it uses the noAns
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="script.js.html">script.js</a>, <a href="script.js.html#line129">line 129</a>
+        <a href="script.js.html">script.js</a>, <a href="script.js.html#line139">line 139</a>
     </li></ul></dd>
     
 
@@ -680,7 +681,7 @@ If the title is "Yes", it uses the yesAnswers array, otherwise it uses the noAns
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="script.js.html">script.js</a>, <a href="script.js.html#line115">line 115</a>
+        <a href="script.js.html">script.js</a>, <a href="script.js.html#line125">line 125</a>
     </li></ul></dd>
     
 
@@ -791,7 +792,7 @@ It displays the zodiac sign's name, type and description in an HTML element with
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="zodiac.js.html">zodiac.js</a>, <a href="zodiac.js.html#line1">line 1</a>
+        <a href="zodiac.js.html">zodiac.js</a>, <a href="zodiac.js.html#line34">line 34</a>
     </li></ul></dd>
     
 
@@ -901,7 +902,96 @@ It displays the zodiac sign's name, type and description in an HTML element with
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="script.js.html">script.js</a>, <a href="script.js.html#line24">line 24</a>
+        <a href="script.js.html">script.js</a>, <a href="script.js.html#line33">line 33</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+            
+
+    
+
+    
+    <h4 class="name" id="init"><span class="type-signature"></span>init<span class="signature">()</span><span class="type-signature"></span></h4>
+    
+
+    
+
+
+
+<div class="description">
+    Preloads the images on initialization to improve performance.
+Iterates over the array of zodiac names and creates a new Image object for each one, setting its src property to the path.
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="zodiac.js.html">zodiac.js</a>, <a href="zodiac.js.html#line24">line 24</a>
     </li></ul></dd>
     
 
@@ -990,7 +1080,7 @@ Iterates over the array of card paths and creates a new Image object for each on
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="script.js.html">script.js</a>, <a href="script.js.html#line34">line 34</a>
+        <a href="script.js.html">script.js</a>, <a href="script.js.html#line43">line 43</a>
     </li></ul></dd>
     
 
@@ -1036,6 +1126,7 @@ Iterates over the array of card paths and creates a new Image object for each on
 <div class="description">
     Event handler for the submit button click.
 Handles showing and hiding the question input field, updating the question, and toggling visibility of the deck and instructions.
+It also checks if the input question is a yes/no question and sets the isQuestionValid flag accordingly.
 </div>
 
 
@@ -1128,7 +1219,7 @@ Handles showing and hiding the question input field, updating the question, and 
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="script.js.html">script.js</a>, <a href="script.js.html#line166">line 166</a>
+        <a href="script.js.html">script.js</a>, <a href="script.js.html#line190">line 190</a>
     </li></ul></dd>
     
 
@@ -1180,7 +1271,7 @@ Handles showing and hiding the question input field, updating the question, and 
 <br class="clear">
 
 <footer>
-    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 4.0.2</a> on Thu Jun 08 2023 16:36:35 GMT+0000 (Coordinated Universal Time)
+    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 4.0.2</a> on Fri Jun 09 2023 05:21:55 GMT+0000 (Coordinated Universal Time)
 </footer>
 
 <script> prettyPrint(); </script>
