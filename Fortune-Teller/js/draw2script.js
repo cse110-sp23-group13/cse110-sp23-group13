@@ -122,13 +122,18 @@ function createCardContainer() {
     var rightContainer = document.createElement('div');
     rightContainer.classList.add('right_container')
 
+    // Create a container for all text
+    var textContainer = document.createElement('div');
+    textContainer.classList.add('text_container');
+
     // Create a container for the button
     var chooseContainer = document.createElement('div');
-    rightContainer.classList.add('choose_container')
+    chooseContainer.classList.add('choose_container')
 
     // Append all information
-    container.appendChild(leftContainer);
-    container.appendChild(rightContainer);
+    container.appendChild(textContainer);
+    textContainer.appendChild(leftContainer);
+    textContainer.appendChild(rightContainer);
     leftContainer.appendChild(sDescription);
     rightContainer.appendChild(cDescription);
     chooseContainer.appendChild(chooseAnotherCardButton);
@@ -162,6 +167,8 @@ function chooseAnotherCardButtonEvent() {
     card1.style.visibility = 'visible';
     card2.style.visibility = 'visible';
     cardCount = 0;
+    sIdx = null;
+    cIdx = null;
 }
 
 /**
