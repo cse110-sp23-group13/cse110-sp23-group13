@@ -16,7 +16,7 @@
     font-size: xx-large;
     text-align: center;
     padding: 10px;
-    word-wrap:break-word;
+    word-wrap: break-word;
 }
 
 .question-box {
@@ -144,9 +144,37 @@
     transform: translateX(-50%);
 }
 
+.bottom_card_container img {
+    margin: 10px;
+    margin-bottom: 0;
+}
+
 #pick2-box {
     display: flex;
     justify-content: center;
     gap: 15px;
     width: 500px;
+    margin-top: 15%;
+    margin-bottom: 5%;
+}
+
+.left_container {
+    width: 47%;
+    float: left;
+}
+
+.right_container {
+    width: 47%;
+    float: right;
+}
+
+.choose_container {
+    bottom: 0;
+}
+
+.pick2-overlay {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
