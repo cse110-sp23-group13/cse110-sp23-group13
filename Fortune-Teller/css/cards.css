@@ -146,6 +146,7 @@
 
 .bottom_card_container img {
     margin: 10px;
+    margin-bottom: 0;
 }
 
 #pick2-box {
