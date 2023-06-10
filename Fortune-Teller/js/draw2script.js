@@ -16,7 +16,6 @@ var submitButton = document.getElementById('submitButton');
 var questionBox = document.getElementById('pick2-box');
 var instructions = document.getElementById('instructions');
 var textEnabled = true;
-var currCard = null;
 var card1 = null;
 var card2 = null;
 var sIdx = null;
@@ -47,15 +46,16 @@ function preloadCards() {
 
 /**
  * Event handler for a click on a card.
- * Checks if a card is already selected, if the clicked target isn't a card, or if the question isn't valid.
- * If any of these conditions are true, it returns without doing anything.
- * Otherwise, it hides the clicked card and creates an overlay containing the selected card.
+ * Creates images at the bottom to show your current hand.
+ * Checks which order the card was clicked on. If its the second card, it calls createCardContainer() to create the overlay.
  * @param {Event} event - The click event
  */
 function cardClickEvent(event) {
     if (cardCount >= 2){
         return;
     }
+    var currCard = event.target;
+    currCard.style.visibility = 'hidden';
     audio.play();
     cardCount += 1;
     
@@ -67,23 +67,23 @@ function cardClickEvent(event) {
         document.body.appendChild(bottomCardContainer);
 
         // generate and show card drawn
-        card1 = new Image(133, 200);
+        card1 = currCard
+        var image1 = new Image(133, 200);
         sIdx = Math.floor(Math.random() * cardPaths.length);
-        card1.src = cardPaths[sIdx];
-        bottomCardContainer.appendChild(card1);
-        card1.style.visibility = 'visible';
+        image1.src = cardPaths[sIdx];
+        bottomCardContainer.appendChild(image1);
     }
 
     // challenge card
     if (cardCount == 2){
         // generate and show card drawn (dependent on card1)
-        card2 = new Image(133, 200);
+        card2 = currCard
+        var image2 = new Image(133, 200);
         while (cIdx == sIdx || cIdx == null){
             cIdx = Math.floor(Math.random() * cardPaths.length);
         }
-        card2.src = cardPaths[cIdx];
-        bottomCardContainer.appendChild(card2);
-        card2.style.visibility = 'visible';
+        image2.src = cardPaths[cIdx];
+        bottomCardContainer.appendChild(image2);
 
         // trigger overlay
         container = createCardContainer();
@@ -93,30 +93,26 @@ function cardClickEvent(event) {
 }
 
 /**
- * Creates the card container for the selected card.
- * This involves creating the layout, adding the card image, and populating it with information like title and card description.
+ * Creates the card container for the selected cards.
+ * This involves creating the layout and populating it with the descriptions.
  * Also sets up a button to choose a different card.
  * @returns {HTMLElement} - The card container
  */
 function createCardContainer() {
     var container = document.createElement('div');
     container.classList.add('overlay');
+    container.classList.add('pick2-overlay');
 
-    var chooseAnotherCardButton = document.createElement('button');
-    chooseAnotherCardButton.textContent = 'Choose a Different Card';
-    chooseAnotherCardButton.classList.add('choose_another')
-
-    // var imageContainer = document.createElement('div');
-    // imageContainer.classList.add('image_container');
-
-    // var image = new Image(200, 300);
+    // Generate card descriptions
     var descriptions = createCardDescription(sIdx, cIdx);
     var sDescription = descriptions[0];
     var cDescription = descriptions[1];
 
+    // Create choose another card button
+    var chooseAnotherCardButton = document.createElement('button');
+    chooseAnotherCardButton.textContent = 'Choose a Different Card';
+    chooseAnotherCardButton.classList.add('choose_another')
     chooseAnotherCardButton.addEventListener('click', chooseAnotherCardButtonEvent);
-    // image.style.maxWidth = '100%';
-    // imageContainer.appendChild(image);
 
     // Create a container for the text on the left side
     var leftContainer = document.createElement('div');
@@ -126,6 +122,7 @@ function createCardContainer() {
     var rightContainer = document.createElement('div');
     rightContainer.classList.add('right_container')
 
+    // Create a container for the button
     var chooseContainer = document.createElement('div');
     rightContainer.classList.add('choose_container')
 
@@ -140,10 +137,9 @@ function createCardContainer() {
 }
 
 /**
- * Creates a description for the card based on the title and a random index.
- * If the title is "Yes", it uses the yesAnswers array, otherwise it uses the noAnswers array.
- * @param {number} sIdx - The index to use for the answer arrays
- * @param {number} cIdx - The index to use for the answer arrays
+ * Creates a description for the card based on the card index
+ * @param {number} sIdx - The index to use for the situation array
+ * @param {number} cIdx - The index to use for the challenge array
  * @returns {HTMLElement, HTMLElement} - The description elements
  */
 function createCardDescription(sIdx, cIdx) {
@@ -156,29 +152,21 @@ function createCardDescription(sIdx, cIdx) {
 
 /**
  * Event handler for the "Choose a Different Card" button.
- * If a card is already chosen, it makes the current card visible again and removes the card container overlay.
- * Also shows the selected card at the bottom of the screen.
+ * Resets the conditions of card drawing.
  */
 function chooseAnotherCardButtonEvent() {
-    // if (!bottomCardContainer) {
-    //     bottomCardContainer = document.createElement('div');
-    //     bottomCardContainer.classList.add('bottom_card_container')
-    //     document.body.appendChild(bottomCardContainer);
-    // }
-    // else if (selectedCard && bottomCardContainer) {
-    //     bottomCardContainer.innerHTML = '';
-    //     selectedCard.style.visibility = 'visible';
-    // }
-    // bottomCardContainer.appendChild(selectedCard);
-    // currCard.style.visibility = 'visible';
-    // document.body.removeChild(container);
+
+    bottomCardContainer.innerHTML = '';
+    document.body.removeChild(bottomCardContainer);
+    document.body.removeChild(container);
+    card1.style.visibility = 'visible';
+    card2.style.visibility = 'visible';
     cardCount = 0;
 }
 
 /**
  * Event handler for the submit button click.
  * Handles showing and hiding the question input field, updating the question, and toggling visibility of the deck and instructions.
- * It also checks if the input question is a yes/no question and sets the isQuestionValid flag accordingly.
  * @param {Event} event - The click event
  */
 function submitButtonClickEvent(event) {

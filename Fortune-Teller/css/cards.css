@@ -16,7 +16,7 @@
     font-size: xx-large;
     text-align: center;
     padding: 10px;
-    word-wrap:break-word;
+    word-wrap: break-word;
 }
 
 .question-box {
@@ -158,7 +158,6 @@
 .left_container {
     width: 47%;
     float: left;
-
 }
 
 .right_container {
@@ -166,7 +165,7 @@
     float: right;
 }
 
-.choose_container {
-    display: flex;
-    justify-content: center;
+#pick2-box {
+    margin-top: 15%;
+    margin-bottom: 5%;
 }
