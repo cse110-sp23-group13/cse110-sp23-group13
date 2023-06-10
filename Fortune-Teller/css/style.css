@@ -10,7 +10,6 @@ p {
 body{
     background-image: url("../images/backgroundImage.jpeg");
     background-size: 100% auto;
-    overflow: hidden;
 }
 
 button {
