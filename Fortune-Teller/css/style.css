@@ -151,3 +151,36 @@ header {
     top: 0px;
     max-width: 200px;
 }
+
+/* For smaller screens */
+@media screen and (max-width: 450px) {  
+    /* Decrease size of cat photo on home page */
+    .clicker img {
+        max-height: 30vh;
+        object-fit: contain;
+    }
+    /* Decrease padding and font size */
+    .button {
+        padding: 15px 40px;
+        font-size: 20px;
+    }
+    /* Decrease width of cat photo(home button) */
+    header img {
+        width: 70px;
+    }
+    /* Decrease font size and top/bot margin of side buttons */
+    .sideButton{
+        font-size: 10px;
+        margin-top: 5px;
+        margin-bottom: 5px;
+    } 
+    /* Make width and position of header elements relative */
+    header {
+        position: relative;
+        max-width: 40vw;
+    }
+    /* Decrease top margin */
+    #feedback-page {
+        margin-top: 50px;
+    }
+}
