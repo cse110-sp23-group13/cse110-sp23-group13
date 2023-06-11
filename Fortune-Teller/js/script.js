@@ -171,7 +171,7 @@ function chooseAnotherCardButtonEvent() {
 /**
  * Verifies if the question asked is a Yes/No Question
  * @param {String} question - The question the user inputted
- * @returns 
+ * @returns {boolean} - True if the question starts with 'is', 'are', 'do', 'does', 'will', 'can', 'could', 'would', 'should', false otherwise
  */
 function isYesNoQuestion(question) {
     // Convert to lowercase and trim white spaces
