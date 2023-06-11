@@ -1,3 +1,5 @@
+import '@testing-library/jest-dom/extend-expect';
+
 describe('Basic user flow for Website', () => {
     // First, visit the website
     beforeAll(async () => {

@@ -17,7 +17,8 @@
     "verbose": true,
     "transform": {
       "^.+\\.[t|j]sx?$": "babel-jest"
-    }
+    },
+    "testEnvironment": "jsdom"
   },
   "dependencies": {
     "jest-environment-jsdom": "^29.5.0",
