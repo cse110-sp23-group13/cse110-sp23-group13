@@ -71,3 +71,32 @@ input[type="text"] {
     z-index: -1;
     width: 100%;
 }
+
+/* For smaller screens */
+@media screen and (max-width: 450px) {  
+    /* Decrease size of "Zodiac Sign Finder" */
+    #zodiac-page h1 {
+        font-size: 30px;
+    }
+    /* Make outline fit */
+    #zodiac-page .container {
+        position: relative;
+        width: 80vw;
+        padding: 5px;
+        padding-left: 5vw;
+        padding-right: 5vw;
+        margin-top: 5vh;
+        top: 0;
+        left: 0;
+        transform: translate(0, 0);
+    }
+    /* Decrease top margin */
+    #result {
+        margin-top: 5px;
+    }
+    /* Shrink sign */
+    #symbol {
+        height: 40px;
+        margin: 0px;
+    }
+}

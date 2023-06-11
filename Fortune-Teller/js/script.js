@@ -168,6 +168,11 @@ function chooseAnotherCardButtonEvent() {
     isCardSelected = false;
 }
 
+/**
+ * Verifies if the question asked is a Yes/No Question
+ * @param {String} question - The question the user inputted
+ * @returns 
+ */
 function isYesNoQuestion(question) {
     // Convert to lowercase and trim white spaces
     question = question.toLowerCase().trim();
@@ -239,3 +244,14 @@ function submitButtonClickEvent(event) {
         textEnabled = true;
     }
 }
+
+export {init, 
+    preloadCards, 
+    cardClickEvent, 
+    playFlipSound, 
+    createCardContainer, 
+    createTitle, 
+    createCardDescription, 
+    chooseAnotherCardButtonEvent, 
+    submitButtonClickEvent,
+    isYesNoQuestion}

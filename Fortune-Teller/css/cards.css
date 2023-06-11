@@ -16,7 +16,7 @@
     font-size: xx-large;
     text-align: center;
     padding: 10px;
-    word-wrap:break-word;
+    word-wrap: break-word;
 }
 
 .question-box {
@@ -144,9 +144,94 @@
     transform: translateX(-50%);
 }
 
+.bottom_card_container img {
+    margin: 10px;
+    margin-bottom: 0;
+}
+
 #pick2-box {
     display: flex;
     justify-content: center;
     gap: 15px;
     width: 500px;
+    margin-top: 15%;
+    margin-bottom: 5%;
+}
+
+.left_container {
+    width: 47%;
+    float: left;
+}
+
+.right_container {
+    width: 47%;
+    float: right;
+}
+
+.choose_container {
+    bottom: 0;
+}
+
+.pick2-overlay {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+/* For smaller screens */
+@media screen and (max-width: 450px) {
+    /* Decrease font size of input and height of input box */
+    .question{
+        font-size: 10pt;
+        height: 50px;
+    }
+    /* Decrease size of prompt font */
+    .question-text{
+        font-size: large;
+    }
+    /* Increase size of prompt given */
+    .question-box {
+        max-width: 90%;
+        margin-top: 10vh;
+        transition: margin-top 1s ease;
+    }
+    /* Shrink the gap between input and submit. Make submit relative */
+    #question-form {
+        gap: 10px;
+        width: 100vw;
+    }
+    /* Decrease size of submit button text */
+    .question-box button{
+        font-size: 10pt;
+    }
+    /* Make margin of deck of cards relative */
+    #deck{
+        margin-left: 5vw;
+    }
+    /* Make cards smaller */
+    #deck img {
+        max-width: 110px;
+    }
+    /* Decrease size of "Pick a Card" */
+    #instructions {
+        font-size: 20px;
+    }
+    /* Make the whole reading relative to screen */
+    .flex_container {
+        width: 80vw;
+    }
+    /* Decrease padding for image reading */
+    .image_container {
+        padding: 3px;
+    }
+    /* Keep dimensions of the image given for the reading */
+    .image_container img{
+        object-fit: contain;
+    }
+    /* Decrease padding and relative width of the text for the reading */
+    .info_container {
+        padding: 3px;
+        width: 50vh;
+    }    
 }
