@@ -1,4 +1,6 @@
-import '@testing-library/jest-dom/extend-expect';
+/**
+ * @jest-environment puppeteer
+ */
 
 describe('Basic user flow for Website', () => {
     // First, visit the website
