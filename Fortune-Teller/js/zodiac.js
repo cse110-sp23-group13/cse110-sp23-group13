@@ -40,19 +40,23 @@ function init() {
  *
  */
 function findZodiacSign() {
-    // Get the birth date value entered by the user
-    var birthDateInput = document.getElementById("birth-date");
-    var birthDate = new Date(birthDateInput.value);
+  // Get the birth date value entered by the user
+  var birthDateInput = document.getElementById("birth-date");
+  var birthDate = new Date(birthDateInput.value);
+
+  // Check if a valid date was entered
+  if (isNaN(birthDate)) {
+    document.getElementById("result").innerHTML = "Please enter a valid birth date.";
+    return;
+  }
+
+  // Extract the birth date and month
+  var birthDay = birthDate.getDate();
+  var birthMonth = birthDate.getMonth() + 1; // Adding 1 since months are zero-based
+
+  var birthDay = birthDate.getDate();
+  var birthMonth = birthDate.getMonth() + 1;
   
-    // Check if a valid date was entered
-    if (isNaN(birthDate)) {
-      document.getElementById("result").innerHTML = "Please enter a valid birth date.";
-      return;
-    }
-  
-    // Extract the birth date and month
-    var birthDay = birthDate.getDate();
-    var birthMonth = birthDate.getMonth() + 1; // Adding 1 since months are zero-based
   
     // Find the corresponding zodiac sign based on the birth date and month
     var zodiacSign = null;
@@ -144,4 +148,7 @@ function findZodiacSign() {
       document.getElementById("result").innerHTML = "Unable to determine your zodiac sign.";
     }
 }
+module.exports = {
+  findZodiacSign
+};
   
