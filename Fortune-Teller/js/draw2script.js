@@ -145,7 +145,7 @@ function createCardContainer() {
  * Creates a description for the card based on the card index
  * @param {number} sIdx - The index to use for the situation array
  * @param {number} cIdx - The index to use for the challenge array
- * @returns {HTMLElement, HTMLElement} - The description elements
+ * @returns {Array<HTMLElement>} - The description elements
  */
 function createCardDescription(sIdx, cIdx) {
     var sDescription = document.createElement('p');
