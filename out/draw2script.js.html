@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>JSDoc: Source: draw2script.js</title>
+
+    <script src="scripts/prettify/prettify.js"> </script>
+    <script src="scripts/prettify/lang-css.js"> </script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link type="text/css" rel="stylesheet" href="styles/prettify-tomorrow.css">
+    <link type="text/css" rel="stylesheet" href="styles/jsdoc-default.css">
+</head>
+
+<body>
+
+<div id="main">
+
+    <h1 class="page-title">Source: draw2script.js</h1>
+
+    
+
+
+
+    
+    <section>
+        <article>
+            <pre class="prettyprint source linenums"><code>import { situations, challenges } from '../text/careerCardDescriptions.js';
+import { cardPaths } from '../text/cardPaths.js'
+
+
+window.addEventListener('DOMContentLoaded', init);
+
+
+var deck = document.getElementById('deck')
+var bottomCardContainer = null;
+var container = null;
+var sText = document.getElementById('s-text');
+var sAnswer = document.getElementById('s-answer');
+var cText = document.getElementById('c-text');
+var cAnswer = document.getElementById('c-answer');
+var submitButton = document.getElementById('submitButton');
+var questionBox = document.getElementById('pick2-box');
+var instructions = document.getElementById('instructions');
+var textEnabled = true;
+var card1 = null;
+var card2 = null;
+var sIdx = null;
+var cIdx = null;
+var cardCount = 0;
+var audio = document.getElementById('flipSound');
+
+
+/**
+ * The init function sets up the event listeners for deck and submitButton and preloads the cards.
+ */
+function init() {
+    preloadCards()
+    deck.addEventListener('click', cardClickEvent);
+    submitButton.addEventListener('click', submitButtonClickEvent)
+};
+
+/**
+ * Preloads card images to improve performance.
+ * Iterates over the array of card paths and creates a new Image object for each one, setting its src property to the path.
+ */
+function preloadCards() {
+    for (var i = 0; i &lt; cardPaths.length; i++) {
+        var img = new Image();
+        img.src = cardPaths[i];
+    }
+}
+
+/**
+ * Event handler for a click on a card.
+ * Creates images at the bottom to show your current hand.
+ * Checks which order the card was clicked on. If its the second card, it calls createCardContainer() to create the overlay.
+ * @param {Event} event - The click event
+ */
+function cardClickEvent(event) {
+    if (cardCount >= 2){
+        return;
+    }
+    var currCard = event.target;
+    currCard.style.visibility = 'hidden';
+    audio.play();
+    cardCount += 1;
+    
+    // situation card
+    if (cardCount == 1){
+        // create bottom card container
+        bottomCardContainer = document.createElement('div');
+        bottomCardContainer.classList.add('bottom_card_container')
+        document.body.appendChild(bottomCardContainer);
+
+        // generate and show card drawn
+        card1 = currCard
+        var image1 = new Image(133, 200);
+        sIdx = Math.floor(Math.random() * cardPaths.length);
+        image1.src = cardPaths[sIdx];
+        bottomCardContainer.appendChild(image1);
+    }
+
+    // challenge card
+    if (cardCount == 2){
+        // generate and show card drawn (dependent on card1)
+        card2 = currCard
+        var image2 = new Image(133, 200);
+        while (cIdx == sIdx || cIdx == null){
+            cIdx = Math.floor(Math.random() * cardPaths.length);
+        }
+        image2.src = cardPaths[cIdx];
+        bottomCardContainer.appendChild(image2);
+
+        // trigger overlay
+        container = createCardContainer();
+        document.body.appendChild(container);
+    }
+    audio.currentTime = 0;
+}
+
+/**
+ * Creates the card container for the selected cards.
+ * This involves creating the layout and populating it with the descriptions.
+ * Also sets up a button to choose a different card.
+ * @returns {HTMLElement} - The card container
+ */
+function createCardContainer() {
+    var container = document.createElement('div');
+    container.classList.add('overlay');
+    container.classList.add('pick2-overlay');
+
+    // Generate card descriptions
+    var descriptions = createCardDescription(sIdx, cIdx);
+    var sDescription = descriptions[0];
+    var cDescription = descriptions[1];
+
+    // Create choose another card button
+    var chooseAnotherCardButton = document.createElement('button');
+    chooseAnotherCardButton.textContent = 'Choose a Different Card';
+    chooseAnotherCardButton.classList.add('choose_another')
+    chooseAnotherCardButton.addEventListener('click', chooseAnotherCardButtonEvent);
+
+    // Create a container for the text on the left side
+    var leftContainer = document.createElement('div');
+    leftContainer.classList.add('left_container');
+
+    // Create a container for the text on the right side
+    var rightContainer = document.createElement('div');
+    rightContainer.classList.add('right_container')
+
+    // Create a container for all text
+    var textContainer = document.createElement('div');
+    textContainer.classList.add('text_container');
+
+    // Create a container for the button
+    var chooseContainer = document.createElement('div');
+    chooseContainer.classList.add('choose_container')
+
+    // Append all information
+    container.appendChild(textContainer);
+    textContainer.appendChild(leftContainer);
+    textContainer.appendChild(rightContainer);
+    leftContainer.appendChild(sDescription);
+    rightContainer.appendChild(cDescription);
+    chooseContainer.appendChild(chooseAnotherCardButton);
+    container.appendChild(chooseContainer);
+    return container
+}
+
+/**
+ * Creates a description for the card based on the card index
+ * @param {number} sIdx - The index to use for the situation array
+ * @param {number} cIdx - The index to use for the challenge array
+ * @returns {Array&lt;HTMLElement>} - The description elements
+ */
+function createCardDescription(sIdx, cIdx) {
+    var sDescription = document.createElement('p');
+    var cDescription = document.createElement('p');
+        sDescription.textContent = situations[sIdx];
+        cDescription.textContent = challenges[cIdx];
+    return [sDescription, cDescription];
+}
+
+/**
+ * Event handler for the "Choose a Different Card" button.
+ * Resets the conditions of card drawing.
+ */
+function chooseAnotherCardButtonEvent() {
+
+    bottomCardContainer.innerHTML = '';
+    document.body.removeChild(bottomCardContainer);
+    document.body.removeChild(container);
+    card1.style.visibility = 'visible';
+    card2.style.visibility = 'visible';
+    cardCount = 0;
+    sIdx = null;
+    cIdx = null;
+}
+
+/**
+ * Event handler for the submit button click.
+ * Handles showing and hiding the question input field, updating the question, and toggling visibility of the deck and instructions.
+ * @param {Event} event - The click event
+ */
+function submitButtonClickEvent(event) {
+    event.preventDefault();
+    if (textEnabled) {
+        var sInput = sAnswer.value;
+        var cInput = cAnswer.value;
+        if (sInput.trim() === '' || cInput.trim() === '') {
+            return;
+        }
+
+        //display question
+        questionBox.style.marginTop = 0;
+        questionBox.style.flexDirection = 'row';
+
+        sText.textContent = sInput;
+        cText.textContent = cInput;
+        sAnswer.style.display = 'none';
+        cAnswer.style.display = 'none';
+
+        submitButton.textContent = 'Update Question';
+
+        //show deck and instructions
+        instructions.classList.add('fade-in')
+        deck.classList.add('fade-in')
+        instructions.style.visibility = 'visible'
+        deck.style.visibility = 'visible'
+
+        textEnabled = false;
+    }
+    else {
+        //show input box
+        questionBox.style.flexDirection = 'column';
+        sAnswer.style.display = 'flex';
+        cAnswer.style.display = 'flex';
+        sAnswer.value = '';
+        cAnswer.value = '';
+        sText.textContent = 'What is your Situation?'; // Reset the h1 tag's content
+        cText.textContent = 'What is your Challenge?';
+        submitButton.textContent = 'Submit';
+        textEnabled = true;
+    }
+}</code></pre>
+        </article>
+    </section>
+
+
+
+
+</div>
+
+<nav>
+    <h2><a href="index.html">Home</a></h2><h3>Global</h3><ul><li><a href="global.html#cardClickEvent">cardClickEvent</a></li><li><a href="global.html#chooseAnotherCardButtonEvent">chooseAnotherCardButtonEvent</a></li><li><a href="global.html#createCardContainer">createCardContainer</a></li><li><a href="global.html#createCardDescription">createCardDescription</a></li><li><a href="global.html#createTitle">createTitle</a></li><li><a href="global.html#findZodiacSign">findZodiacSign</a></li><li><a href="global.html#init">init</a></li><li><a href="global.html#isYesNoQuestion">isYesNoQuestion</a></li><li><a href="global.html#preloadCards">preloadCards</a></li><li><a href="global.html#submitButtonClickEvent">submitButtonClickEvent</a></li></ul>
+</nav>
+
+<br class="clear">
+
+<footer>
+    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 4.0.2</a> on Sun Jun 11 2023 19:57:35 GMT+0000 (Coordinated Universal Time)
+</footer>
+
+<script> prettyPrint(); </script>
+<script src="scripts/linenumber.js"> </script>
+</body>
+</html>
