@@ -149,11 +149,9 @@
     margin-bottom: 0;
 }
 
+/* career/pick 2 specific */
 #pick2-box {
-    display: flex;
-    justify-content: center;
     gap: 15px;
-    width: 500px;
     margin-top: 15%;
     margin-bottom: 5%;
 }
