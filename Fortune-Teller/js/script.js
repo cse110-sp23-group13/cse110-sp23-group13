@@ -5,6 +5,9 @@ import { cardPaths } from '../text/cardPaths.js'
 window.addEventListener('DOMContentLoaded', init);
 
 
+
+var muteButton = document.getElementById('muteButton');
+var audioElement = document.getElementById('flipSound');
 var deck = document.getElementById('deck')
 var selectedCard = null;
 var bottomCardContainer = null;
@@ -33,7 +36,12 @@ var isQuestionValid = false; // Flag to track if the question is valid
 function init() {
     preloadCards()
     deck.addEventListener('click', cardClickEvent);
-    submitButton.addEventListener('click', submitButtonClickEvent)
+    submitButton.addEventListener('click', submitButtonClickEvent);
+    preloadCards();
+    var muteButton = document.getElementById('muteButton');
+    if (muteButton) {
+        muteButton.addEventListener('click', toggleMute);
+    }
 };
 
 /**
@@ -46,6 +54,16 @@ function preloadCards() {
         img.src = cardPaths[i];
     }
 }
+
+function toggleMute() {
+    if (audioElement.muted) {
+      audioElement.muted = false;
+      muteButton.textContent = 'Turn Sound Off';
+    } else {
+      audioElement.muted = true;
+      muteButton.textContent = 'Turn Sound On';
+    }
+  }
 
 /**
  * Event handler for a click on a card.
