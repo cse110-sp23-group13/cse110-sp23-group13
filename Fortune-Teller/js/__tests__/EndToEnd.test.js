@@ -25,5 +25,6 @@ describe('Basic user flow for Website', () => {
       // Expect page to be the option.html page
       expect(currentDomain).toBe('https://cse110-sp23-group13.github.io/cse110-sp23-group13/Fortune-Teller/option.html');
     });
+       
 
   });
