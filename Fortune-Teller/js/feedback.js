@@ -1,3 +1,4 @@
+//feedback.js
 document.getElementById("suggestionForm").addEventListener("submit", function(event) {
     event.preventDefault(); // Prevent form submission
     
