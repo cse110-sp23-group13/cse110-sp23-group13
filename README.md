@@ -4,7 +4,7 @@
 ![Workflow badge](https://github.com/cse110-sp23-group13/cse110-sp23-group13/actions/workflows/node.js.yml/badge.svg)
 ![Workflow badge](https://github.com/cse110-sp23-group13/cse110-sp23-group13/actions/workflows/jsdoc.yml/badge.svg)
 
-[![Black Cat Logo](/admin/branding/catbubble-small.png)](https://cse110-sp23-group13.github.io/cse110-sp23-group13/Fortune-Teller)
+[<img src="/Users/molly/Documents/GitHub/cse110-sp23-group13/admin/branding/catbubble.png" alt="Black Cat Logo" width="250">](https://cse110-sp23-group13.github.io/cse110-sp23-group13/Fortune-Teller)
 
 [Fortune Telling website](https://cse110-sp23-group13.github.io/cse110-sp23-group13/Fortune-Teller)
 
