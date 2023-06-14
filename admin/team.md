@@ -7,8 +7,8 @@ Hello! Welcome to our team page :) We are the Black Cat Crew, and we value open 
 ## Team Members
 - Adam Bauer, Leader -- [GitHub](https://github.com/asbauer1)
   - I’m a transfer student from Santa Barbara studying Computer Engineering. During the weekends I’m involved with Rocket Propulsion Laboratory (RPL) and have recently also joined Camp Kesem. In my free time I enjoy hiking, reading, and calisthenics.
-- Adhithi Ganesan, Planner -- [GitHub](https://github.com/adhithiganesan)
-  - Hi! I’m Adhithi, a 3rd year Cognitive Science student. 
+- Adhithi Ganesan, Developer -- [GitHub](https://github.com/adhithiganesan)
+  - Hi! I’m Adhithi, a 3rd year Cognitive Science- Design and Interaction student with a CS minor. I'm interested in front-end development and in my free time like to hang out with my cat and workout.
 - Emily Jin, Developer -- [GitHub](https://github.com/emjinn)
   - Hello! My name is Emily and I'm a third-year computer science student, interested in pursuing product management :) 
 - Catherine Du, Developer -- [GitHub](https://github.com/c5du)
