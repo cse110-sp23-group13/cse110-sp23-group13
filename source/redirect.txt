@@ -1,1 +1,1 @@
-Fortune-Teller
+../Fortune-Teller
