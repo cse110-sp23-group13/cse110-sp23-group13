@@ -29,3 +29,5 @@
 [Documentation](https://cse110-sp23-group13.github.io/cse110-sp23-group13/out/)
 
 [Private project video](https://drive.google.com/file/d/1YPPmw_CcIe8cTbyLWJkraxL7GjLGDUfB/view?usp=sharing)
+
+[Public project video](https://youtu.be/hNLsAcA5kd0)
